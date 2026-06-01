@@ -2,11 +2,15 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>CRIPTO.MAT</title>
+    <title>
+        CRIPTO.MAT
+    </title>
 
     <link rel="stylesheet"
         href="style.css">
@@ -14,8 +18,13 @@
     <link rel="preconnect"
         href="https://fonts.googleapis.com">
 
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
 </head>
 
 <body>
@@ -23,13 +32,20 @@
     <div class="container">
 
         <!-- MENU LATERAL -->
+
         <aside class="sidebar">
 
-            <h1>🔐 CRIPTO.MAT</h1>
+            <div class="logo-sidebar">
 
-            <p>
-                Criptografia com Matrizes
-            </p>
+                <h1>
+                    🔐 CRIPTO.MAT
+                </h1>
+
+                <p>
+                    Criptografia com Matrizes e Sistemas Lineares
+                </p>
+
+            </div>
 
             <button onclick="mostrarTela('tela1')">
                 🏠 Início
@@ -48,19 +64,21 @@
             </button>
 
             <button onclick="mostrarTela('ajuda')">
-                ❓ Como usar
+                ❓ Como Usar
             </button>
 
         </aside>
 
         <!-- CONTEÚDO -->
+
         <main class="content">
 
-            <!-- ===================== -->
+            <!-- ================================= -->
             <!-- TELA 1 -->
-            <!-- ===================== -->
+            <!-- ================================= -->
 
-            <section class="screen active"
+            <section
+                class="screen active"
                 id="tela1">
 
                 <div class="card">
@@ -70,16 +88,21 @@
                     </h1>
 
                     <h3>
-                        Aprenda criptografia
-                        usando matrizes
+                        Aprenda Criptografia
+                        utilizando Matrizes e
+                        Sistemas Lineares
                     </h3>
 
-                    <p>
-                        Um aplicativo educativo
-                        que ensina matemática,
-                        matrizes e sistemas lineares
-                        através da criptografia.
+                    <p class="intro-text">
+
+                        Transforme mensagens em
+                        códigos secretos e descubra
+                        como a matemática é utilizada
+                        para proteger informações.
+
                     </p>
+
+                
 
                     <div class="menu-buttons">
 
@@ -91,6 +114,7 @@
                             )">
 
                             🔒 Criptografar
+
                         </button>
 
                         <button
@@ -101,6 +125,7 @@
                             )">
 
                             🔓 Descriptografar
+
                         </button>
 
                         <button
@@ -110,30 +135,127 @@
                             'ajuda'
                             )">
 
-                            📖 Como usar
+                            📖 Como Usar
+
                         </button>
 
                     </div>
 
-                    <div class="matrix-preview">
+                    <div class="modo-avancado">
 
-                        <div class="matrix">
-                            [2 3]
-                            <br>
-                            [1 4]
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="modoAvancado">
+
+                            🔐🔐 Utilizar Sistemas
+                            Lineares como Segunda
+                            Camada de Criptografia
+
+                        </label>
+
+                    </div>
+
+                    <!-- EXEMPLO VISUAL -->
+
+                    <div class="demo-cripto-card">
+
+                        <h3>
+                            🎯 Exemplo Prático
+                        </h3>
+
+                        <p class="demo-subtitulo">
+
+                            A palavra
+                            <strong>BOLA</strong>
+                            é convertida em números
+                            e criptografada usando
+                            a matriz-chave.
+
+                        </p>
+
+                        <div class="fluxo-cripto">
+
+                            <div class="etapa">
+
+                                <span class="etapa-titulo">
+                                    Palavra
+                                </span>
+
+                                <div class="etapa-box">
+                                    BOLA
+                                </div>
+
+                            </div>
+
+                            <div class="seta">
+                                ➜
+                            </div>
+
+                            <div class="etapa">
+
+                                <span class="etapa-titulo">
+                                    Conversão
+                                </span>
+
+                                <div class="etapa-box">
+                                    1 • 14 • 11 • 0
+                                </div>
+
+                            </div>
+
+                            <div class="seta">
+                                ➜
+                            </div>
+
+                            <div class="etapa">
+
+                                <span class="etapa-titulo">
+                                    🔑 Matriz-Chave
+                                </span>
+
+                                <div class="matriz-card">
+
+                                    <div class="matriz-numero">2</div>
+                                    <div class="matriz-numero">3</div>
+                                    <div class="matriz-numero">1</div>
+                                    <div class="matriz-numero">4</div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="seta">
+                                ➜
+                            </div>
+
+                            <div class="etapa">
+
+                                <span class="etapa-titulo">
+                                    Resultado
+                                </span>
+
+                                <div class="resultado-demo">
+                                    44-57-22-11
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="matrix">
-                            ×
-                        </div>
+                        <div class="explicacao-demo">
 
-                        <div class="matrix">
-                            [14]
-                            <br>
-                            [08]
+                            🔐 A mensagem é convertida
+                            para números, multiplicada
+                            pela matriz-chave e transformada
+                            em um código criptografado.
+
                         </div>
 
                     </div>
+
+                    
 
                     <button
                         class="next-btn"
@@ -143,17 +265,19 @@
                         )">
 
                         Avançar →
+
                     </button>
 
                 </div>
 
             </section>
 
-            <!-- ===================== -->
+            <!-- ================================= -->
             <!-- TELA 2 -->
-            <!-- ===================== -->
+            <!-- ================================= -->
 
-            <section class="screen"
+            <section
+                class="screen"
                 id="tela2">
 
                 <div class="card">
@@ -163,9 +287,9 @@
                     </h2>
 
                     <p>
-                        Digite a mensagem
-                        para criptografar
-                        ou descriptografar.
+                        Digite o texto que será
+                        criptografado ou
+                        descriptografado.
                     </p>
 
                     <div class="radio-group">
@@ -179,6 +303,7 @@
                                 checked>
 
                             Criptografar
+
                         </label>
 
                         <label>
@@ -189,15 +314,14 @@
                                 value="descriptografar">
 
                             Descriptografar
+
                         </label>
 
                     </div>
 
                     <textarea
                         id="mensagem"
-                        placeholder="
-Digite seu texto aqui...">
-                    </textarea>
+                        placeholder="Digite sua mensagem aqui..."></textarea>
 
                     <div class="buttons">
 
@@ -209,6 +333,7 @@ Digite seu texto aqui...">
                             )">
 
                             ← Voltar
+
                         </button>
 
                         <button
@@ -218,6 +343,7 @@ Digite seu texto aqui...">
                             ">
 
                             Avançar →
+
                         </button>
 
                     </div>
@@ -226,11 +352,12 @@ Digite seu texto aqui...">
 
             </section>
 
-            <!-- ===================== -->
+            <!-- ================================= -->
             <!-- TELA 3 -->
-            <!-- ===================== -->
+            <!-- ================================= -->
 
-            <section class="screen"
+            <section
+                class="screen"
                 id="tela3">
 
                 <div class="card">
@@ -240,8 +367,8 @@ Digite seu texto aqui...">
                     </h2>
 
                     <p>
-                        Escolha a matriz usada
-                        na criptografia.
+                        Escolha a matriz que será
+                        utilizada na criptografia.
                     </p>
 
                     <div class="matrix-input">
@@ -278,6 +405,7 @@ Digite seu texto aqui...">
                             )">
 
                             ← Voltar
+
                         </button>
 
                         <button
@@ -287,6 +415,7 @@ Digite seu texto aqui...">
                             ">
 
                             Avançar →
+
                         </button>
 
                     </div>
@@ -295,773 +424,674 @@ Digite seu texto aqui...">
 
             </section>
 
-            <!-- ===================== -->
-            <!-- TELA 4 -->
-            <!-- ===================== -->
+            <!-- ================================= -->
+<!-- TELA 4 -->
+<!-- ================================= -->
 
-            <section class="screen"
-                id="tela4">
+<section
+    class="screen"
+    id="tela4">
 
-                <div class="card">
+    <div class="card">
 
-                    <h2>
-                        4. Conversão do Texto
-                    </h2>
+        <h2>
+            4. Conversão do Texto
+        </h2>
 
-                    <h4>
-                        Texto digitado:
-                    </h4>
+        <p>
+            Nesta etapa o texto é convertido
+            para valores numéricos.
+        </p>
 
-                    <p id="textoOriginal">
-                    </p>
+        <h4>
+            Texto Informado
+        </h4>
 
-                    <h4>
-                        Conversão numérica:
-                    </h4>
+        <div
+            id="textoOriginal"
+            class="result-box">
+        </div>
 
-                    <div
-                        id="matrizTexto"
-                        class="result-box">
-                    </div>
+        <h4>
+            Conversão Numérica
+        </h4>
 
-                    <div class="buttons">
+        <div
+            id="matrizTexto"
+            class="result-box">
+        </div>
 
-                        <button
-                            class="back-btn"
-                            onclick="
-                            mostrarTela(
-                            'tela3'
-                            )">
+        <div class="buttons">
 
-                            ← Voltar
-                        </button>
+            <button
+                class="back-btn"
+                onclick="
+                mostrarTela(
+                'tela3'
+                )">
 
-                        <button
-                            class="next-btn"
-                            onclick="
-                            mostrarProcesso()
-                            ">
+                ← Voltar
 
-                            Avançar →
-                        </button>
+            </button>
 
-                    </div>
+            <button
+                class="next-btn"
+                onclick="
+                mostrarProcesso()
+                ">
 
-                </div>
+                Avançar →
 
-            </section>
+            </button>
 
-            <!-- ===================== -->
-            <!-- TELA 5 -->
-            <!-- ===================== -->
+        </div>
 
-            <section class="screen"
-                id="tela5">
+    </div>
 
-                <div class="card">
+</section>
 
-                    <h2>
-                        5. Processo Matemático
-                    </h2>
+<!-- ================================= -->
+<!-- TELA 5 -->
+<!-- ================================= -->
 
-                    <div
-                        id="processo"
-                        class="result-box">
-                    </div>
+<section
+    class="screen"
+    id="tela5">
 
-                    <div class="buttons">
+    <div class="card">
 
-                        <button
-                            class="back-btn"
-                            onclick="
-                            mostrarTela(
-                            'tela4'
-                            )">
+        <h2>
+            5. Processo Matemático
+        </h2>
 
-                            ← Voltar
-                        </button>
+        <p>
+            Acompanhe todos os cálculos
+            realizados pelo sistema.
+        </p>
 
-                        <button
-                            class="next-btn"
-                            onclick="
-                            mostrarResultado()
-                            ">
+        <!-- BOTÃO SUPERIOR -->
 
-                            Avançar →
-                        </button>
+        <div class="top-nav">
 
-                    </div>
+            <button
+                class="next-btn"
+                onclick="
+                mostrarResultado()
+                ">
 
-                </div>
+                Ir para Resultado Final →
 
-            </section>
+            </button>
 
-            <!-- ===================== -->
-            <!-- TELA 6 -->
-            <!-- ===================== -->
+        </div>
 
-            <section class="screen"
-                id="tela6">
+        <div
+            id="processo"
+            class="result-box">
+        </div>
 
-                <div class="card">
+        <div class="buttons">
 
-                    <h2>
-                        6. Resultado Final
-                    </h2>
+            <button
+                class="back-btn"
+                onclick="
+                mostrarTela(
+                'tela4'
+                )">
 
-                    <div
-                        id="resultadoFinal"
-                        class="result-box">
-                    </div>
+                ← Voltar
 
-                    <div class="buttons">
+            </button>
 
-                        <button
-                            class="back-btn"
-                            onclick="
-                            mostrarTela(
-                            'tela5'
-                            )">
+            <button
+                class="next-btn"
+                onclick="
+                mostrarResultado()
+                ">
 
-                            ← Voltar
-                        </button>
+                Avançar →
 
-                        <button
-                            class="btn-purple"
-                            onclick="
-                            reiniciar()
-                            ">
+            </button>
 
-                            🔄 Nova Operação
-                        </button>
+        </div>
 
-                    </div>
+    </div>
 
-                </div>
+</section>
 
-            </section>
+<!-- ================================= -->
+<!-- TELA 6 -->
+<!-- ================================= -->
 
-                        <!-- ===================== -->
-            <!-- COMO FUNCIONA -->
-            <!-- ===================== -->
+<section
+    class="screen"
+    id="tela6">
 
-            <section class="screen"
-                id="funciona">
+    <div class="card">
 
-                <div class="card">
+        <h2>
+            6. Resultado Final
+        </h2>
 
-                    <h2>
-                        🔐 Como Funciona
-                    </h2>
+        <p>
+            Resultado da operação
+            realizada pelo CRIPTO.MAT.
+        </p>
 
-                    <p>
-                        O sistema CRIPTO.MAT usa
-                        matrizes e multiplicação
-                        matricial para transformar
-                        textos em códigos numéricos.
-                    </p>
+        <div
+            id="resultadoFinal"
+            class="result-box">
+        </div>
 
-                    <!-- ETAPA 1 -->
+        <div class="buttons">
 
-                    <h3>
-                        1. Conversão do Texto
-                    </h3>
+            <button
+                class="back-btn"
+                onclick="
+                mostrarTela(
+                'tela5'
+                )">
 
-                    <p>
-                        Cada caractere do texto
-                        é convertido em um número.
-                    </p>
+                ← Voltar
 
-                    <div class="formula">
+            </button>
 
-                        A = 0
-                        <br>
+            <button
+                class="btn-purple"
+                onclick="
+                reiniciar()
+                ">
 
-                        B = 1
-                        <br>
+                🔄 Nova Operação
 
-                        C = 2
-                        <br>
+            </button>
 
-                        ...
+        </div>
 
-                    </div>
+    </div>
 
-                    <p>
-                        Exemplo:
-                    </p>
+</section>
 
-                    <div class="formula">
+<!-- ================================= -->
+<!-- COMO FUNCIONA -->
+<!-- ================================= -->
 
-                        O = 14
-                        <br>
-
-                        I = 8
-
-                    </div>
-
-                    <!-- ETAPA 2 -->
-
-                    <h3>
-                        2. Formação do Vetor
-                    </h3>
-
-                    <p>
-                        O texto vira um vetor
-                        matemático:
-                    </p>
-
-                    <div class="formula">
-
-                        [14]
-                        <br>
-
-                        [08]
-
-                    </div>
-
-                    <!-- ETAPA 3 -->
-
-                    <h3>
-                        3. Matriz-Chave
-                    </h3>
-
-                    <p>
-                        O sistema utiliza
-                        uma matriz-chave
-                        para realizar a
-                        criptografia.
-                    </p>
-
-                    <div class="formula">
-
-                        [2 3]
-                        <br>
-
-                        [1 4]
-
-                    </div>
-
-                    <!-- ETAPA 4 -->
-
-                    <h3>
-                        4. Multiplicação Matricial
-                    </h3>
-
-                    <p>
-                        A matriz-chave é
-                        multiplicada pelo
-                        vetor do texto.
-                    </p>
-
-                    <div class="formula">
-
-                        [2 3]
-                        ×
-                        [14]
-                        <br>
-
-                        [1 4]
-                        &nbsp;
-                        [08]
-
-                    </div>
-
-                    <p>
-                        Cálculo:
-                    </p>
-
-                    <div class="formula">
-
-                        (2×14 + 3×8)
-                        = 52
-                        <br>
-
-                        (1×14 + 4×8)
-                        = 46
-
-                    </div>
-
-                    <!-- ETAPA 5 -->
-
-                    <h3>
-                        5. Aplicação do Módulo
-                    </h3>
-
-                    <p>
-                        O sistema utiliza
-                        aritmética modular
-                        para manter os números
-                        dentro do conjunto
-                        de caracteres.
-                    </p>
-
-                    <div class="formula">
-
-                        52 mod 251 = 52
-                        <br>
-
-                        46 mod 251 = 46
-
-                    </div>
-
-                    <!-- ETAPA 6 -->
-
-                    <h3>
-                        6. Resultado Criptografado
-                    </h3>
-
-                    <p>
-                        O texto é convertido
-                        em uma sequência
-                        criptografada:
-                    </p>
-
-                    <div class="formula">
-
-                        52-46
-
-                    </div>
-
-                    <!-- DESCRIPTOGRAFIA -->
-
-                    <h3>
-                        🔓 Como Funciona a
-                        Descriptografia
-                    </h3>
-
-                    <p>
-                        Para recuperar o texto,
-                        usamos a matriz inversa.
-                    </p>
-
-                    <div class="formula">
-
-                        A⁻¹
-
-                    </div>
-
-                    <p>
-                        Primeiro calculamos
-                        o determinante:
-                    </p>
-
-                    <div class="formula">
-
-                        det(A)=ad−bc
-
-                    </div>
-
-                    <p>
-                        Depois calculamos
-                        a matriz inversa modular.
-                    </p>
-
-                    <div class="formula">
-
-                        [4 -3]
-                        <br>
-
-                        [-1 2]
-
-                    </div>
-
-                    <p>
-                        A matriz inversa é
-                        multiplicada pelo
-                        vetor criptografado,
-                        recuperando o texto
-                        original.
-                    </p>
-
-                    <div class="formula">
-
-                        Texto Recuperado:
-                        <br>
-
-                        OI
-
-                    </div>
-
-                    <h3>
-                        📌 Por que isso é seguro?
-                    </h3>
-
-                    <p>
-                        Sem conhecer a matriz-chave,
-                        é muito difícil recuperar
-                        o texto original.
-                    </p>
-
-                    <p>
-                        Esse método é baseado
-                        na Cifra de Hill,
-                        um dos métodos clássicos
-                        de criptografia matemática.
-                    </p>
-
-                </div>
-
-            </section>
-
-            <!-- ===================== -->
-            <!-- AJUDA -->
-            <!-- ===================== -->
-
-            <section class="screen"
-                id="ajuda">
-
-                <div class="card">
-
-                    <h2>
-                        ❓ Como usar o CRIPTO.MAT
-                    </h2>
-
-                    <ol>
-
-                        <li>
-                            Escolha entre
-                            criptografar ou
-                            descriptografar.
-                        </li>
-
-                        <li>
-                            Digite o texto
-                            desejado.
-                        </li>
-
-                        <li>
-                            Escolha uma
-                            matriz-chave.
-                        </li>
-
-                        <li>
-                            Veja a conversão
-                            do texto para
-                            números.
-                        </li>
-
-                        <li>
-                            Observe o processo
-                            matemático da
-                            multiplicação
-                            matricial.
-                        </li>
-
-                        <li>
-                            Veja o resultado
-                            final da operação.
-                        </li>
-
-                    </ol>
-
-                    <h3>
-                        📌 Importante
-                    </h3>
-
-                    <p>
-                        Para descriptografar,
-                        utilize exatamente
-                        a mesma matriz-chave
-                        usada na criptografia.
-                    </p>
-
-                </div>
-
-            </section>
-
-            <!-- ======================= -->
-            <!-- AJUDA -->
-            <!-- ======================= -->
-
-            <section class="screen"
-                id="ajuda">
-
-                <div class="card">
-
-                    <h2>
-                        📖 Como usar o CRIPTO.MAT
-                    </h2>
-
-                    <ol>
-
-                        <li>
-                            Escolha criptografar ou
-                            descriptografar.
-                        </li>
-
-                        <li>
-                            Digite sua mensagem.
-                        </li>
-
-                        <li>
-                            Escolha uma matriz-chave.
-                        </li>
-
-                        <li>
-                            Veja a conversão do texto
-                            para números.
-                        </li>
-
-                        <li>
-                            Observe os cálculos
-                            matemáticos.
-                        </li>
-
-                        <li>
-                            Veja o resultado final.
-                        </li>
-
-                    </ol>
-
-                </div>
-
-            </section>
-
-
-
-<!-- ===================== -->
-<!-- MATRIZES -->
-<!-- ===================== -->
-
-<section class="screen"
-    id="matrizes">
+<section
+    class="screen"
+    id="funciona">
 
     <div class="card">
 
         <h1>
-            📘 Matrizes
+            🔐 Como Funciona
         </h1>
 
         <p>
-            Bem-vindo à aula de Matrizes
-            do CRIPTO.MAT.
-            Aqui você aprenderá desde
-            os conceitos básicos até
-            aplicações reais, incluindo
-            como as matrizes são usadas
-            em criptografia.
+
+            O CRIPTO.MAT utiliza
+            Matrizes, Determinantes,
+            Matrizes Inversas e
+            Sistemas Lineares para
+            transformar mensagens em
+            códigos criptografados.
+
         </p>
 
         <hr>
 
         <h2>
-            1. História das Matrizes
+            🎯 Exemplo Completo:
+            Palavra BOLA
         </h2>
 
         <p>
-            Embora o estudo formal das
-            matrizes tenha crescido no
-            século XIX, ideias parecidas
-            já eram utilizadas há muitos
-            anos por matemáticos chineses
-            para resolver sistemas de
-            equações.
+
+            Vamos acompanhar todas
+            as etapas da criptografia
+            da palavra:
+
         </p>
+
+        <div class="etapa-destaque">
+
+            BOLA
+
+        </div>
+
+        <!-- ETAPA 1 -->
+
+        <h2>
+            1️⃣ Conversão das Letras
+        </h2>
 
         <p>
-            Atualmente, matrizes são usadas
-            em áreas como:
+
+            Cada caractere é convertido
+            para um valor numérico.
+
         </p>
 
-        <ul>
+        <div class="cards-letras">
 
-            <li>
-                🤖 Inteligência Artificial
-            </li>
+            <div class="letra-card">
+                B = 1
+            </div>
 
-            <li>
-                🎮 Jogos Digitais
-            </li>
+            <div class="letra-card">
+                O = 14
+            </div>
 
-            <li>
-                🔐 Criptografia
-            </li>
+            <div class="letra-card">
+                L = 11
+            </div>
 
-            <li>
-                📊 Ciência de Dados
-            </li>
+            <div class="letra-card">
+                A = 0
+            </div>
 
-            <li>
-                🎥 Computação Gráfica
-            </li>
+        </div>
 
-            <li>
-                🚀 Engenharia Aeroespacial
-            </li>
+        <div class="resultado-etapa">
 
-        </ul>
+            1 - 14 - 11 - 0
+
+        </div>
+
+        <!-- ETAPA 2 -->
+
+        <h2>
+            2️⃣ Formação dos Vetores
+        </h2>
+
+        <p>
+
+            Os valores são agrupados
+            em pares.
+
+        </p>
+
+        <div class="vetores-container">
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">
+                    1
+                </div>
+
+                <div class="vetor-numero">
+                    14
+                </div>
+
+            </div>
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">
+                    11
+                </div>
+
+                <div class="vetor-numero">
+                    0
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ETAPA 3 -->
+
+        <h2>
+            3️⃣ Matriz-Chave
+        </h2>
+
+        <p>
+
+            O sistema utiliza uma
+            matriz para realizar a
+            criptografia.
+
+        </p>
+
+        <div class="matriz-card grande">
+
+            <div class="matriz-numero">
+                2
+            </div>
+
+            <div class="matriz-numero">
+                3
+            </div>
+
+            <div class="matriz-numero">
+                1
+            </div>
+
+            <div class="matriz-numero">
+                4
+            </div>
+
+        </div>
+
+        <!-- ETAPA 4 -->
+
+        <h2>
+            4️⃣ Multiplicação Matricial
+        </h2>
+
+        <p>
+
+            A matriz-chave multiplica
+            cada vetor da mensagem.
+
+        </p>
+
+        <div class="operacao-matriz">
+
+            <div class="matriz-card">
+
+                <div class="matriz-numero">2</div>
+                <div class="matriz-numero">3</div>
+                <div class="matriz-numero">1</div>
+                <div class="matriz-numero">4</div>
+
+            </div>
+
+            <span class="operador">
+                ×
+            </span>
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">
+                    1
+                </div>
+
+                <div class="vetor-numero">
+                    14
+                </div>
+
+            </div>
+
+            <span class="operador">
+                =
+            </span>
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">
+                    44
+                </div>
+
+                <div class="vetor-numero">
+                    57
+                </div>
+
+            </div>
+
+        </div>
+
+        <p>
+
+            Resultado do primeiro vetor:
+
+        </p>
+
+        <div class="resultado-etapa">
+
+            44 - 57
+
+        </div>
 
         <hr>
 
+        <div class="operacao-matriz">
+
+            <div class="matriz-card">
+
+                <div class="matriz-numero">2</div>
+                <div class="matriz-numero">3</div>
+                <div class="matriz-numero">1</div>
+                <div class="matriz-numero">4</div>
+
+            </div>
+
+            <span class="operador">
+                ×
+            </span>
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">
+                    11
+                </div>
+
+                <div class="vetor-numero">
+                    0
+                </div>
+
+            </div>
+
+            <span class="operador">
+                =
+            </span>
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">
+                    22
+                </div>
+
+                <div class="vetor-numero">
+                    11
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="resultado-etapa">
+
+            22 - 11
+
+        </div>
+
+        <h3>
+            Resultado da Criptografia Matricial
+        </h3>
+
+        <div class="codigo-final-box">
+
+            44 - 57 - 22 - 11
+
+        </div>
+
+        <!-- ETAPA 5 -->
+
         <h2>
-            2. O que é uma Matriz?
+            5️⃣ Segunda Camada
+            (Sistemas Lineares)
         </h2>
 
         <p>
-            Uma matriz é uma organização
-            de números distribuídos em
-            linhas e colunas.
-        </p>
 
-        <p>
-            Pense nela como uma tabela
-            matemática usada para guardar
-            informações e fazer cálculos.
+            Quando ativada, uma segunda
+            camada de segurança é aplicada.
+
         </p>
 
         <div class="formula">
 
-            [2 5 8]
-            <br>
+            x' = 2x + y
 
-            [1 4 6]
+            <br><br>
+
+            y' = x + 3y
+
+        </div>
+
+        <div class="resultado-etapa">
+
+            (44,57)
+            →
+            (145,215)
 
         </div>
 
-        <p>
-            Nesse exemplo temos:
-        </p>
+        <div class="resultado-etapa">
 
-        <ul>
-
-            <li>
-                2 linhas
-            </li>
-
-            <li>
-                3 colunas
-            </li>
-
-            <li>
-                ordem 2 × 3
-            </li>
-
-        </ul>
-
-        <p>
-            A ordem da matriz é sempre:
-        </p>
-
-        <div class="formula">
-
-            linhas × colunas
+            (22,11)
+            →
+            (55,55)
 
         </div>
+
+        <h3>
+            Código Criptografado Final
+        </h3>
+
+        <div class="codigo-final-box">
+
+            145 - 215 - 55 - 55
+
+        </div>
+
+        <!-- DESCRIPTOGRAFIA -->
 
         <hr>
 
+        <h1>
+            🔓 Descriptografia
+        </h1>
+
         <h2>
-            3. Elementos da Matriz
+            1️⃣ Remover Sistema Linear
+        </h2>
+
+        <div class="resultado-etapa">
+
+            145 - 215
+            →
+            44 - 57
+
+        </div>
+
+        <div class="resultado-etapa">
+
+            55 - 55
+            →
+            22 - 11
+
+        </div>
+
+        <h2>
+            2️⃣ Aplicar Matriz Inversa
         </h2>
 
         <p>
-            Cada número presente
-            em uma matriz recebe
-            o nome de elemento.
+
+            A matriz inversa da chave é:
+
         </p>
 
-        <div class="formula">
+        <div class="matriz-card grande">
 
-            [4 2]
-            <br>
+            <div class="matriz-numero">
+                4
+            </div>
 
-            [7 9]
+            <div class="matriz-numero">
+                -3
+            </div>
+
+            <div class="matriz-numero">
+                -1
+            </div>
+
+            <div class="matriz-numero">
+                2
+            </div>
 
         </div>
 
-        <p>
-            Observe:
-        </p>
+        <div class="resultado-etapa">
 
-        <ul>
-
-            <li>
-                4 → linha 1, coluna 1
-            </li>
-
-            <li>
-                2 → linha 1, coluna 2
-            </li>
-
-            <li>
-                7 → linha 2, coluna 1
-            </li>
-
-            <li>
-                9 → linha 2, coluna 2
-            </li>
-
-        </ul>
-
-        <p>
-            Na matemática usamos
-            a notação:
-        </p>
-
-        <div class="formula">
-
-            aᵢⱼ
+            44 - 57
+            →
+            1 - 14
 
         </div>
 
-        <p>
-            Onde:
-        </p>
+        <div class="resultado-etapa">
 
-        <ul>
-
-            <li>
-                i = linha
-            </li>
-
-            <li>
-                j = coluna
-            </li>
-
-        </ul>
-
-        <p>
-            Exemplo:
-        </p>
-
-        <div class="formula">
-
-            a₂₁ = 7
+            22 - 11
+            →
+            11 - 0
 
         </div>
 
+        <h2>
+            3️⃣ Converter para Letras
+        </h2>
+
+        <div class="cards-letras">
+
+            <div class="letra-card">
+                1 = B
+            </div>
+
+            <div class="letra-card">
+                14 = O
+            </div>
+
+            <div class="letra-card">
+                11 = L
+            </div>
+
+            <div class="letra-card">
+                0 = A
+            </div>
+
+        </div>
+
+        <div class="etapa-destaque">
+
+            🔓 BOLA
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="screen" id="matrizes">
+
+    <div class="card">
+
+        <h1>📘 Matrizes</h1>
+
         <p>
-            Significa:
-            elemento da linha 2
-            coluna 1.
+            Bem-vindo ao estudo das Matrizes! Neste conteúdo vamos aprender o que são matrizes, como elas são representadas, quais são seus tipos, as principais operações matemáticas e como elas são utilizadas no sistema de criptografia do CRIPTO.MAT.
         </p>
 
         <hr>
 
-        <h2>
-            4. Ordem da Matriz
-        </h2>
+        <h2>1️⃣ O que é uma Matriz?</h2>
 
         <p>
-            A ordem representa
-            quantas linhas e colunas
-            a matriz possui.
+            Uma matriz é uma tabela formada por números organizados em linhas e colunas. Ela é utilizada para armazenar informações e realizar cálculos matemáticos de forma organizada.
         </p>
 
         <p>
-            Exemplo:
+            Observe a matriz abaixo:
         </p>
 
-        <div class="formula">
+        <div class="matriz-card grande">
 
-            [1 2]
-            <br>
+            <div class="matriz-numero">2</div>
+            <div class="matriz-numero">3</div>
 
-            [3 4]
-            <br>
-
-            [5 6]
+            <div class="matriz-numero">1</div>
+            <div class="matriz-numero">4</div>
 
         </div>
 
@@ -1070,32 +1100,54 @@ Digite seu texto aqui...">
         </p>
 
         <ul>
-
-            <li>
-                3 linhas
-            </li>
-
-            <li>
-                2 colunas
-            </li>
-
+            <li>2 linhas</li>
+            <li>2 colunas</li>
+            <li>Ordem 2 × 2</li>
         </ul>
 
         <div class="formula">
-
-            Ordem = 3 × 2
-
+            Ordem = Número de Linhas × Número de Colunas
         </div>
 
         <hr>
 
-        <h2>
-            5. Tipos de Matrizes
-        </h2>
+        <h2>2️⃣ Elementos de uma Matriz</h2>
 
-        <h3>
-            📌 Matriz Linha
-        </h3>
+        <p>
+            Cada número presente na matriz é chamado de elemento.
+        </p>
+
+        <div class="formula">
+
+            A =
+
+            <br><br>
+
+            [ 2 3 ]
+
+            <br>
+
+            [ 1 4 ]
+
+        </div>
+
+        <ul>
+
+            <li>a₁₁ = 2 → Linha 1, Coluna 1</li>
+
+            <li>a₁₂ = 3 → Linha 1, Coluna 2</li>
+
+            <li>a₂₁ = 1 → Linha 2, Coluna 1</li>
+
+            <li>a₂₂ = 4 → Linha 2, Coluna 2</li>
+
+        </ul>
+
+        <hr>
+
+        <h2>3️⃣ Tipos de Matrizes</h2>
+
+        <h3>📌 Matriz Linha</h3>
 
         <p>
             Possui apenas uma linha.
@@ -1103,13 +1155,11 @@ Digite seu texto aqui...">
 
         <div class="formula">
 
-            [1 2 3]
+            [ 2 5 8 10 ]
 
         </div>
 
-        <h3>
-            📌 Matriz Coluna
-        </h3>
+        <h3>📌 Matriz Coluna</h3>
 
         <p>
             Possui apenas uma coluna.
@@ -1117,1272 +1167,499 @@ Digite seu texto aqui...">
 
         <div class="formula">
 
-            [2]
+            [ 2 ]
+
             <br>
 
-            [4]
+            [ 5 ]
+
             <br>
 
-            [8]
+            [ 8 ]
 
         </div>
 
-        <h3>
-            📌 Matriz Quadrada
-        </h3>
+        <h3>📌 Matriz Quadrada</h3>
 
         <p>
-            Possui mesmo número
-            de linhas e colunas.
+            Possui o mesmo número de linhas e colunas.
         </p>
 
         <div class="formula">
 
-            [1 2]
+            [ 1 2 ]
+
             <br>
 
-            [3 4]
+            [ 3 4 ]
 
         </div>
 
-        <h3>
-            📌 Matriz Identidade
-        </h3>
+        <h3>📌 Matriz Nula</h3>
 
         <p>
-            Possui 1 na diagonal
-            principal e 0 nos
-            demais elementos.
+            Todos os elementos são iguais a zero.
         </p>
 
         <div class="formula">
 
-            [1 0 0]
+            [ 0 0 ]
+
             <br>
 
-            [0 1 0]
-            <br>
-
-            [0 0 1]
+            [ 0 0 ]
 
         </div>
 
-        <p>
-            Ela funciona como
-            o número 1 da multiplicação.
-        </p>
+        <h3>📌 Matriz Diagonal</h3>
 
         <p>
-            Qualquer matriz multiplicada
-            pela identidade continua
-            igual.
+            Apenas os elementos da diagonal principal são diferentes de zero.
         </p>
 
         <div class="formula">
 
-            A × I = A
+            [ 3 0 ]
+
+            <br>
+
+            [ 0 5 ]
 
         </div>
 
-        <h3>
-            📌 Matriz Nula
-        </h3>
+        <h3>📌 Matriz Identidade</h3>
 
         <p>
-            Todos os elementos são 0.
+            Funciona como o número 1 na multiplicação comum.
         </p>
 
         <div class="formula">
 
-            [0 0]
+            [ 1 0 ]
+
             <br>
 
-            [0 0]
+            [ 0 1 ]
 
         </div>
 
-        <h3>
-            📌 Matriz Diagonal
-        </h3>
+        <hr>
+
+        <h2>4️⃣ Igualdade de Matrizes</h2>
 
         <p>
-            Apenas a diagonal principal
-            possui valores diferentes
-            de zero.
+            Duas matrizes são iguais quando possuem a mesma ordem e os mesmos elementos nas mesmas posições.
         </p>
 
         <div class="formula">
 
-            [4 0]
+            [ 1 2 ]
+
             <br>
 
-            [0 2]
-
-        </div>
-
-        <h3>
-            📌 Matriz Escalar
-        </h3>
-
-        <p>
-            Todos os elementos
-            da diagonal principal
-            são iguais.
-        </p>
-
-        <div class="formula">
-
-            [5 0]
-            <br>
-
-            [0 5]
-
-        </div>
-
-        <h3>
-            📌 Matriz Triangular Superior
-        </h3>
-
-        <div class="formula">
-
-            [2 5 8]
-            <br>
-
-            [0 3 7]
-            <br>
-
-            [0 0 1]
-
-        </div>
-
-        <h3>
-            📌 Matriz Triangular Inferior
-        </h3>
-
-        <div class="formula">
-
-            [1 0 0]
-            <br>
-
-            [3 2 0]
-            <br>
-
-            [4 6 7]
-
-        </div>
-
-        <h3>
-            📌 Matriz Transposta
-        </h3>
-
-        <p>
-            É formada trocando
-            linhas por colunas.
-        </p>
-
-        <div class="formula">
-
-            A =
-            [1 2]
-            <br>
-
-            [3 4]
+            [ 3 4 ]
 
             <br><br>
 
-            Aᵀ =
-            [1 3]
+            =
+
+            <br><br>
+
+            [ 1 2 ]
+
             <br>
 
-            [2 4]
+            [ 3 4 ]
 
         </div>
 
         <hr>
 
-        <h2>
-    6. Operações com Matrizes
-</h2>
-
-<p>
-    As operações matriciais permitem
-    manipular dados matemáticos.
-</p>
-
-<hr>
-
-<h3>
-    ➕ Soma de Matrizes
-</h3>
-
-<p>
-    Para somar matrizes, elas precisam
-    ter a mesma ordem.
-</p>
-
-<p>
-    Somamos elemento por elemento.
-</p>
-
-<div class="formula">
-
-    [2 4]
-    +
-    [1 3]
-
-    <br><br>
-
-    [5 7]
-    &nbsp;
-    [2 6]
-
-    <br><br>
-
-    =
-
-    <br><br>
-
-    [3 7]
-    <br>
-
-    [7 13]
-
-</div>
-
-<p>
-    Observe:
-</p>
-
-<div class="formula">
-
-    2+1=3
-    <br>
-
-    4+3=7
-    <br>
-
-    5+2=7
-    <br>
-
-    7+6=13
-
-</div>
-
-<hr>
-
-<h3>
-    ➖ Subtração de Matrizes
-</h3>
-
-<p>
-    Funciona da mesma forma
-    que a soma.
-</p>
-
-<div class="formula">
-
-    [8 6]
-    −
-    [2 1]
-
-    <br><br>
-
-    [5 4]
-    &nbsp;
-    [3 2]
-
-    <br><br>
-
-    =
-
-    <br><br>
-
-    [6 5]
-    <br>
-
-    [2 2]
-
-</div>
-
-<hr>
-
-<h3>
-    ✖ Multiplicação por Escalar
-</h3>
-
-<p>
-    Multiplicamos todos os elementos
-    da matriz pelo número.
-</p>
-
-<div class="formula">
-
-    3 ×
-
-    [2 4]
-    <br>
-
-    [1 5]
-
-</div>
-
-<p>
-    Resultado:
-</p>
-
-<div class="formula">
-
-    [6 12]
-    <br>
-
-    [3 15]
-
-</div>
-
-<hr>
-
-<h3>
-    🔢 Multiplicação de Matrizes
-</h3>
-
-<p>
-    A multiplicação matricial é uma das
-    operações mais importantes e também
-    a base da criptografia do
-    CRIPTO.MAT.
-</p>
-
-<p>
-    Multiplicamos:
-</p>
-
-<div class="formula">
-
-    linha × coluna
-
-</div>
-
-<p>
-    Exemplo:
-</p>
-
-<div class="formula">
-
-    [2 3]
-    ×
-    [4]
-    <br>
-
-    [1 4]
-    &nbsp;
-    [8]
-
-</div>
-
-<p>
-    Passo a passo:
-</p>
-
-<div class="formula">
-
-    (2×4)+(3×8)
-
-    <br>
-
-    8+24
-
-    <br>
-
-    = 32
-
-</div>
-
-<div class="formula">
-
-    (1×4)+(4×8)
-
-    <br>
-
-    4+32
-
-    <br>
-
-    = 36
-
-</div>
-
-<p>
-    Resultado:
-</p>
-
-<div class="formula">
-
-    [32]
-    <br>
-
-    [36]
-
-</div>
-
-<p>
-    É exatamente assim que o
-    CRIPTO.MAT criptografa
-    mensagens.
-</p>
-
-<hr>
-
-<h2>
-    7. Propriedades das Matrizes
-</h2>
-
-<h3>
-    Propriedade Comutativa
-</h3>
-
-<p>
-    Na soma:
-</p>
-
-<div class="formula">
-
-    A + B = B + A
-
-</div>
-
-<p>
-    Porém na multiplicação:
-</p>
-
-<div class="formula">
-
-    A × B ≠ B × A
-
-</div>
-
-<p>
-    A ordem importa.
-</p>
-
-<h3>
-    Propriedade Associativa
-</h3>
-
-<div class="formula">
-
-    (A+B)+C=A+(B+C)
-
-</div>
-
-<h3>
-    Elemento Neutro
-</h3>
-
-<p>
-    A matriz identidade funciona
-    como elemento neutro.
-</p>
-
-<div class="formula">
-
-    A × I = A
-
-</div>
-
-<hr>
-
-<h2>
-    8. Determinante de Matrizes
-</h2>
-
-<p>
-    O determinante é um número
-    associado à matriz.
-</p>
-
-<p>
-    Ele ajuda a descobrir:
-</p>
-
-<ul>
-
-    <li>
-        Se existe matriz inversa
-    </li>
-
-    <li>
-        Se sistemas possuem solução
-    </li>
-
-    <li>
-        Aplicações em criptografia
-    </li>
-
-</ul>
-
-<hr>
-
-<h3>
-    Determinante 2×2
-</h3>
-
-<p>
-    Fórmula:
-</p>
-
-<div class="formula">
-
-    det(A)=ad−bc
-
-</div>
-
-<p>
-    Exemplo:
-</p>
-
-<div class="formula">
-
-    [2 3]
-    <br>
-
-    [1 4]
-
-</div>
-
-<p>
-    Cálculo:
-</p>
-
-<div class="formula">
-
-    (2×4)
-    −
-    (3×1)
-
-    <br>
-
-    8−3
-
-    <br>
-
-    = 5
-
-</div>
-
-<p>
-    Portanto:
-</p>
-
-<div class="formula">
-
-    det(A)=5
-
-</div>
-
-<hr>
-
-<h3>
-    Determinante 3×3
-</h3>
-
-<p>
-    Usamos a
-    Regra de Sarrus.
-</p>
-
-<div class="formula">
-
-    [1 2 3]
-    <br>
-
-    [4 5 6]
-    <br>
-
-    [7 8 9]
-
-</div>
-
-<p>
-    Repetimos as duas primeiras
-    colunas:
-</p>
-
-<div class="formula">
-
-    [1 2 3 1 2]
-    <br>
-
-    [4 5 6 4 5]
-    <br>
-
-    [7 8 9 7 8]
-
-</div>
-
-<p>
-    Depois fazemos:
-</p>
-
-<div class="formula">
-
-    diagonais positivas
-    −
-    diagonais negativas
-
-</div>
-
-<p>
-    Esse processo é muito usado
-    em álgebra linear.
-</p>
-
-<hr>
-
-<h2>
-    9. Exercício Resolvido
-</h2>
-
-<p>
-    Resolva:
-</p>
-
-<div class="formula">
-
-    [2 1]
-    ×
-    [5]
-    <br>
-
-    [3 4]
-    &nbsp;
-    [2]
-
-</div>
-
-<p>
-    Primeiro valor:
-</p>
-
-<div class="formula">
-
-    (2×5)+(1×2)
-
-    <br>
-
-    10+2
-
-    <br>
-
-    =12
-
-</div>
-
-<p>
-    Segundo valor:
-</p>
-
-<div class="formula">
-
-    (3×5)+(4×2)
-
-    <br>
-
-    15+8
-
-    <br>
-
-    =23
-
-</div>
-
-<p>
-    Resultado:
-</p>
-
-<div class="formula">
-
-    [12]
-    <br>
-
-    [23]
-
-</div>
-
-<hr>
-<h2>
-    10. Matriz Inversa
-</h2>
-
-<p>
-    A matriz inversa é uma das ideias
-    mais importantes da Álgebra Linear.
-</p>
-
-<p>
-    Ela serve para “desfazer” uma
-    multiplicação matricial.
-</p>
-
-<p>
-    Pense nela como uma operação
-    inversa, semelhante à divisão.
-</p>
-
-<p>
-    Exemplo:
-</p>
-
-<div class="formula">
-
-    5 × 2 = 10
-
-    <br><br>
-
-    10 ÷ 2 = 5
-
-</div>
-
-<p>
-    Nas matrizes não existe divisão,
-    então usamos a matriz inversa.
-</p>
-
-<div class="formula">
-
-    A × A⁻¹ = I
-
-</div>
-
-<p>
-    Onde:
-</p>
-
-<ul>
-
-    <li>
-        A = matriz original
-    </li>
-
-    <li>
-        A⁻¹ = matriz inversa
-    </li>
-
-    <li>
-        I = matriz identidade
-    </li>
-
-</ul>
-
-<p>
-    Isso significa que a matriz inversa
-    “desfaz” a multiplicação da matriz.
-</p>
-
-<hr>
-
-<h3>
-    📌 Quando uma matriz possui inversa?
-</h3>
-
-<p>
-    Nem toda matriz possui inversa.
-</p>
-
-<p>
-    Para existir inversa:
-</p>
-
-<ul>
-
-    <li>
-        A matriz deve ser quadrada
-    </li>
-
-    <li>
-        O determinante deve ser
-        diferente de zero
-    </li>
-
-</ul>
-
-<div class="formula">
-
-    det(A) ≠ 0
-
-</div>
-
-<p>
-    Se o determinante for zero,
-    não existe inversa.
-</p>
-
-<hr>
-
-<h3>
-    📌 Fórmula da Matriz Inversa (2×2)
-</h3>
-
-<p>
-    Dada a matriz:
-</p>
-
-<div class="formula">
-
-    [a b]
-    <br>
-
-    [c d]
-
-</div>
-
-<p>
-    A fórmula da inversa é:
-</p>
-
-<div class="formula">
-
-    A⁻¹ =
-
-    1
-    ─────
-    ad−bc
-
-    <br><br>
-
-    [ d −b ]
-    <br>
-
-    [ −c a ]
-
-</div>
-
-<p>
-    Observe:
-</p>
-
-<ul>
-
-    <li>
-        trocamos a posição de
-        a e d
-    </li>
-
-    <li>
-        b e c ficam negativos
-    </li>
-
-</ul>
-
-<hr>
-
-<h3>
-    Exemplo Resolvido
-</h3>
-
-<p>
-    Vamos encontrar a inversa:
-</p>
-
-<div class="formula">
-
-    [2 3]
-    <br>
-
-    [1 4]
-
-</div>
-
-<p>
-    Primeiro calculamos
-    o determinante:
-</p>
-
-<div class="formula">
-
-    det(A)=ad−bc
-
-</div>
-
-<div class="formula">
-
-    (2×4)
-    −
-    (3×1)
-
-</div>
-
-<div class="formula">
-
-    8−3=5
-
-</div>
-
-<p>
-    Agora montamos a inversa:
-</p>
-
-<div class="formula">
-
-    A⁻¹=
-
-    1/5
-
-    <br><br>
-
-    [4 -3]
-    <br>
-
-    [-1 2]
-
-</div>
-
-<p>
-    Essa matriz consegue desfazer
-    a multiplicação da original.
-</p>
-
-<hr>
-
-<h3>
-    🔐 Matriz Inversa no CRIPTO.MAT
-</h3>
-
-<p>
-    No CRIPTO.MAT usamos:
-</p>
-
-<div class="formula">
-
-    Texto × Matriz-chave
-
-</div>
-
-<p>
-    para criptografar.
-</p>
-
-<p>
-    Depois usamos:
-</p>
-
-<div class="formula">
-
-    Texto criptografado
-    ×
-    Matriz inversa
-
-</div>
-
-<p>
-    para recuperar o texto original.
-</p>
-
-<p>
-    Exemplo:
-</p>
-
-<div class="formula">
-
-    [2 3]
-    <br>
-
-    [1 4]
-
-</div>
-
-<p>
-    Criptografa a mensagem.
-</p>
-
-<p>
-    Depois:
-</p>
-
-<div class="formula">
-
-    [4 -3]
-    <br>
-
-    [-1 2]
-
-</div>
-
-<p>
-    recupera o texto.
-</p>
-
-<p>
-    Sem a matriz correta,
-    é extremamente difícil
-    descriptografar.
-</p>
-
-<hr>
-
-<h2>
-    11. Aplicações Reais das Matrizes
-</h2>
-
-<p>
-    Matrizes estão presentes em
-    praticamente toda tecnologia
-    moderna.
-</p>
-
-<h3>
-    🎮 Jogos Digitais
-</h3>
-
-<p>
-    Matrizes movem personagens,
-    câmeras e objetos em jogos 2D
-    e 3D.
-</p>
-
-<h3>
-    🤖 Inteligência Artificial
-</h3>
-
-<p>
-    Redes neurais utilizam milhões
-    de multiplicações matriciais
-    para aprender padrões.
-</p>
-
-<h3>
-    🎥 Computação Gráfica
-</h3>
-
-<p>
-    Filmes e animações usam
-    matrizes para rotação,
-    escala e movimentação.
-</p>
-
-<h3>
-    🔐 Segurança e Criptografia
-</h3>
-
-<p>
-    Sistemas criptográficos utilizam
-    matemática matricial para proteger
-    informações.
-</p>
-
-<h3>
-    🚀 Engenharia
-</h3>
-
-<p>
-    Matrizes ajudam a modelar
-    estruturas, forças e movimentos.
-</p>
-
-<hr>
-
-<h2>
-    12. Curiosidades
-</h2>
-
-<ul>
-
-    <li>
-        O Google usa álgebra linear
-        para organizar resultados
-        de busca.
-    </li>
-
-    <li>
-        IA generativa usa matrizes
-        gigantescas.
-    </li>
-
-    <li>
-        Jogos 3D usam milhares de
-        operações matriciais por
-        segundo.
-    </li>
-
-</ul>
-
-<hr>
-
-<h2>
-    13. Exercício Resolvido
-</h2>
-
-<p>
-    Encontre o determinante:
-</p>
-
-<div class="formula">
-
-    [5 2]
-    <br>
-
-    [3 1]
-
-</div>
-
-<p>
-    Resolução:
-</p>
-
-<div class="formula">
-
-    (5×1)
-    −
-    (2×3)
-
-</div>
-
-<div class="formula">
-
-    5−6
-
-</div>
-
-<div class="formula">
-
-    = -1
-
-</div>
-
-<p>
-    Como o determinante é diferente
-    de zero, a matriz possui inversa.
-</p>
-
-<hr>
-
-<h2>
-    ✅ Resumo Final
-</h2>
-
-<p>
-    Matrizes são estruturas
-    matemáticas fundamentais.
-</p>
-
-<p>
-    Elas permitem:
-</p>
-
-<ul>
-
-    <li>
-        organizar informações
-    </li>
-
-    <li>
-        resolver sistemas lineares
-    </li>
-
-    <li>
-        criar jogos
-    </li>
-
-    <li>
-        desenvolver IA
-    </li>
-
-    <li>
-        proteger mensagens
-    </li>
-
-</ul>
-
-<p>
-    O CRIPTO.MAT utiliza exatamente
-    esses conceitos matemáticos
-    para ensinar criptografia
-    de forma interativa.
-</p>
-
-</div>
-</section>
-
-
-
-<!-- ===================== -->
-<!-- SISTEMAS LINEARES -->
-<!-- ===================== -->
-
-<section class="screen"
-    id="sistemas">
-
-    <div class="card">
-
-        <h1>
-            📗 Sistemas Lineares
-        </h1>
+        <h2>5️⃣ Adição de Matrizes</h2>
 
         <p>
-            Nesta seção você aprenderá
-            sistemas lineares de forma
-            simples, como se estivesse
-            em uma aula com professor.
+            A soma é realizada elemento por elemento.
+        </p>
+
+        <div class="formula">
+
+            [ 1 2 ]
+
+            +
+
+            [ 5 6 ]
+
+            <br>
+
+            [ 3 4 ]
+
+            &nbsp;&nbsp;
+
+            [ 7 8 ]
+
+        </div>
+
+        <p>
+            Resultado:
+        </p>
+
+        <div class="formula">
+
+            [ 6 8 ]
+
+            <br>
+
+            [ 10 12 ]
+
+        </div>
+
+        <hr>
+
+        <h2>6️⃣ Subtração de Matrizes</h2>
+
+        <p>
+            A subtração também é realizada elemento por elemento.
+        </p>
+
+        <div class="formula">
+
+            [ 8 7 ]
+
+            -
+
+            [ 2 1 ]
+
+            <br>
+
+            [ 6 5 ]
+
+            &nbsp;&nbsp;
+
+            [ 3 4 ]
+
+        </div>
+
+        <p>
+            Resultado:
+        </p>
+
+        <div class="formula">
+
+            [ 6 6 ]
+
+            <br>
+
+            [ 3 1 ]
+
+        </div>
+
+        <hr>
+
+        <h2>7️⃣ Multiplicação por Escalar</h2>
+
+        <p>
+            Um escalar é um número real que multiplica todos os elementos da matriz.
+        </p>
+
+        <div class="formula">
+
+            3 ×
+
+            [ 1 2 ]
+
+            <br>
+
+            [ 3 4 ]
+
+        </div>
+
+        <p>
+            Resultado:
+        </p>
+
+        <div class="formula">
+
+            [ 3 6 ]
+
+            <br>
+
+            [ 9 12 ]
+
+        </div>
+
+        <hr>
+
+        <h2>8️⃣ Multiplicação de Matrizes</h2>
+
+        <p>
+            A multiplicação matricial é uma das operações mais importantes da Álgebra Linear e é exatamente o processo utilizado pelo CRIPTO.MAT para criptografar mensagens.
+        </p>
+
+        <div class="operacao-matriz">
+
+            <div class="matriz-card">
+
+                <div class="matriz-numero">2</div>
+                <div class="matriz-numero">3</div>
+
+                <div class="matriz-numero">1</div>
+                <div class="matriz-numero">4</div>
+
+            </div>
+
+            <span class="operador">×</span>
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">1</div>
+                <div class="vetor-numero">14</div>
+
+            </div>
+
+            <span class="operador">=</span>
+
+            <div class="vetor-card">
+
+                <div class="vetor-numero">44</div>
+                <div class="vetor-numero">57</div>
+
+            </div>
+
+        </div>
+
+        <p>
+            Cálculo do primeiro valor:
+        </p>
+
+        <div class="formula">
+
+            (2 × 1) + (3 × 14)
+
+            <br>
+
+            2 + 42
+
+            <br>
+
+            44
+
+        </div>
+
+        <p>
+            Cálculo do segundo valor:
+        </p>
+
+        <div class="formula">
+
+            (1 × 1) + (4 × 14)
+
+            <br>
+
+            1 + 56
+
+            <br>
+
+            57
+
+        </div>
+
+        <hr>
+
+        <h2>9️⃣ Determinante</h2>
+
+        <p>
+            O determinante é um número associado à matriz.
+        </p>
+
+        <div class="formula">
+
+            det(A) = ad − bc
+
+        </div>
+
+        <div class="formula">
+
+            det = (2 × 4) − (3 × 1)
+
+            <br><br>
+
+            det = 8 − 3
+
+            <br><br>
+
+            det = 5
+
+        </div>
+
+        <p>
+            Como o determinante é diferente de zero, a matriz possui inversa.
         </p>
 
         <hr>
 
-        <h2>
-            1. O que é um Sistema Linear?
-        </h2>
+        <h2>🔟 Matriz Inversa</h2>
 
         <p>
-            Um sistema linear é um conjunto
-            de equações que possuem variáveis
-            em comum e precisam ser resolvidas
-            ao mesmo tempo.
+            A matriz inversa é utilizada para desfazer uma multiplicação matricial.
         </p>
 
         <p>
-            Exemplo:
+            No CRIPTO.MAT ela é utilizada para recuperar a mensagem original durante a descriptografia.
+        </p>
+
+        <div class="etapa-destaque">
+
+            🔒 Mensagem Original
+
+            <br><br>
+
+            ⬇
+
+            <br><br>
+
+            Matriz Chave
+
+            <br><br>
+
+            ⬇
+
+            <br><br>
+
+            Mensagem Criptografada
+
+            <br><br>
+
+            ⬇
+
+            <br><br>
+
+            Matriz Inversa
+
+            <br><br>
+
+            ⬇
+
+            <br><br>
+
+            🔓 Mensagem Original
+
+        </div>
+
+        <hr>
+
+        <h2>🌎 Aplicações das Matrizes</h2>
+
+        <ul>
+
+            <li>Criptografia</li>
+            <li>Computação Gráfica</li>
+            <li>Jogos Digitais</li>
+            <li>Inteligência Artificial</li>
+            <li>Robótica</li>
+            <li>Processamento de Imagens</li>
+            <li>Engenharia</li>
+            <li>Economia</li>
+            <li>Simulações Computacionais</li>
+
+        </ul>
+
+        <hr>
+
+        <h2>✅ Resumo</h2>
+
+        <p>
+            As matrizes são ferramentas fundamentais da Álgebra Linear. Elas permitem representar dados, realizar operações matemáticas e construir sistemas de criptografia como o utilizado pelo CRIPTO.MAT. Dominar seus conceitos é essencial para compreender aplicações modernas da matemática e da computação.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="screen" id="sistemas">
+
+    <div class="card">
+
+        <h1>📗 Sistemas Lineares</h1>
+
+        <p>
+            Bem-vindo ao estudo dos Sistemas Lineares! Neste conteúdo vamos aprender o que é um sistema linear, como resolver sistemas utilizando diferentes métodos e como eles são utilizados pelo CRIPTO.MAT para criar uma segunda camada de criptografia.
+        </p>
+
+        <hr>
+
+        <h2>1️⃣ O que é um Sistema Linear?</h2>
+
+        <p>
+            Um sistema linear é um conjunto de duas ou mais equações que possuem variáveis em comum.
+        </p>
+
+        <p>
+            Resolver um sistema significa encontrar os valores das variáveis que satisfazem simultaneamente todas as equações.
         </p>
 
         <div class="formula">
 
             2x + y = 10
-            <br>
 
-            x − y = 2
+            <br><br>
+
+            x + 3y = 17
 
         </div>
 
         <p>
-            O objetivo é descobrir
-            os valores de x e y.
+            Nesse exemplo devemos encontrar os valores de x e y que tornam as duas equações verdadeiras ao mesmo tempo.
         </p>
 
         <hr>
 
-        <h2>
-            2. Tipos de Sistemas
-        </h2>
+        <h2>2️⃣ Elementos de um Sistema Linear</h2>
 
-        <h3>
-            Sistema Possível Determinado
-            (SPD)
-        </h3>
+        <div class="formula">
+
+            2x + y = 10
+
+        </div>
 
         <p>
-            Possui apenas uma solução.
+            Nesta equação:
+        </p>
+
+        <ul>
+
+            <li>x e y são as incógnitas.</li>
+
+            <li>2 e 1 são os coeficientes.</li>
+
+            <li>10 é o termo independente.</li>
+
+        </ul>
+
+        <p>
+            As incógnitas representam valores desconhecidos que devem ser encontrados.
+        </p>
+
+        <hr>
+
+        <h2>3️⃣ Classificação dos Sistemas Lineares</h2>
+
+        <h3>📌 Sistema Possível e Determinado (SPD)</h3>
+
+        <p>
+            Possui uma única solução.
         </p>
 
         <div class="formula">
 
-            x = 4
+            x = 3
+
             <br>
 
-            y = 2
+            y = 4
 
         </div>
 
-        <h3>
-            Sistema Possível
-            Indeterminado (SPI)
-        </h3>
+        <h3>📌 Sistema Possível e Indeterminado (SPI)</h3>
 
         <p>
             Possui infinitas soluções.
@@ -2390,16 +1667,15 @@ Digite seu texto aqui...">
 
         <div class="formula">
 
-            x + y = 10
+            x + y = 4
+
             <br>
 
-            2x + 2y = 20
+            2x + 2y = 8
 
         </div>
 
-        <h3>
-            Sistema Impossível (SI)
-        </h3>
+        <h3>📌 Sistema Impossível (SI)</h3>
 
         <p>
             Não possui solução.
@@ -2407,131 +1683,39 @@ Digite seu texto aqui...">
 
         <div class="formula">
 
-            x + y = 4
+            x + y = 3
+
             <br>
-
-            x + y = 10
-
-        </div>
-
-        <hr>
-
-        <h2>
-            3. Método da Substituição
-        </h2>
-
-        <p>
-            Vamos resolver:
-        </p>
-
-        <div class="formula">
 
             x + y = 8
-            <br>
-
-            x − y = 2
-
-        </div>
-
-        <p>
-            Primeiro isolamos uma variável:
-        </p>
-
-        <div class="formula">
-
-            x = y + 2
-
-        </div>
-
-        <p>
-            Substituímos na outra equação:
-        </p>
-
-        <div class="formula">
-
-            (y + 2) + y = 8
-
-        </div>
-
-        <div class="formula">
-
-            2y + 2 = 8
-
-        </div>
-
-        <div class="formula">
-
-            2y = 6
-
-        </div>
-
-        <div class="formula">
-
-            y = 3
-
-        </div>
-
-        <p>
-            Agora encontramos x:
-        </p>
-
-        <div class="formula">
-
-            x = 3 + 2
-
-        </div>
-
-        <div class="formula">
-
-            x = 5
-
-        </div>
-
-        <h3>
-            Resultado Final
-        </h3>
-
-        <div class="formula">
-
-            x = 5
-            <br>
-
-            y = 3
 
         </div>
 
         <hr>
 
-        <h2>
-            4. Método da Adição
-        </h2>
+        <h2>4️⃣ Método da Substituição</h2>
 
         <p>
-            Exemplo:
+            Neste método isolamos uma variável em uma das equações e substituímos na outra.
         </p>
 
         <div class="formula">
 
-            x + y = 10
+            x + y = 7
+
             <br>
 
-            x − y = 2
+            x = 7 - y
 
         </div>
 
         <p>
-            Somando as equações:
+            Em seguida substituímos esse valor na segunda equação.
         </p>
 
         <div class="formula">
 
-            2x = 12
-
-        </div>
-
-        <div class="formula">
-
-            x = 6
+            2x + y = 11
 
         </div>
 
@@ -2541,411 +1725,345 @@ Digite seu texto aqui...">
 
         <div class="formula">
 
-            6 + y = 10
+            2(7 - y) + y = 11
 
         </div>
 
         <div class="formula">
 
-            y = 4
+            14 - 2y + y = 11
+
+            <br><br>
+
+            y = 3
 
         </div>
 
-        <h3>
-            Resultado
-        </h3>
+        <p>
+            Agora substituímos y = 3 na primeira equação:
+        </p>
 
         <div class="formula">
 
-            x = 6
-            <br>
+            x + 3 = 7
 
-            y = 4
+            <br><br>
+
+            x = 4
 
         </div>
 
         <hr>
 
-        <h2>
-            5. Método de Escalonamento
-        </h2>
+        <h2>5️⃣ Método da Adição</h2>
 
         <p>
-            O escalonamento organiza
-            as equações em formato
-            de matriz.
+            O objetivo é eliminar uma das incógnitas somando ou subtraindo as equações.
         </p>
 
         <div class="formula">
 
-            [2 1 | 10]
+            x + y = 7
+
             <br>
 
-            [1 -1 | 2]
+            x - y = 1
 
         </div>
 
         <p>
-            Depois fazemos operações
-            até encontrar as incógnitas.
+            Somando as equações:
+        </p>
+
+        <div class="formula">
+
+            2x = 8
+
+            <br><br>
+
+            x = 4
+
+        </div>
+
+        <p>
+            Substituindo:
+        </p>
+
+        <div class="formula">
+
+            4 + y = 7
+
+            <br><br>
+
+            y = 3
+
+        </div>
+
+        <hr>
+
+        <h2>6️⃣ Método de Escalonamento</h2>
+
+        <p>
+            O escalonamento consiste em transformar o sistema em uma forma triangular, facilitando a resolução.
+        </p>
+
+        <div class="formula">
+
+            x + y = 7
+
+            <br>
+
+            2x + y = 11
+
+        </div>
+
+        <p>
+            Subtraindo a primeira equação da segunda:
+        </p>
+
+        <div class="formula">
+
+            x = 4
+
+        </div>
+
+        <p>
+            Substituindo:
+        </p>
+
+        <div class="formula">
+
+            y = 3
+
+        </div>
+
+        <hr>
+
+        <h2>7️⃣ Representação Matricial</h2>
+
+        <p>
+            Todo sistema linear pode ser representado por matrizes.
+        </p>
+
+        <div class="matriz-card grande">
+
+            <div class="matriz-numero">2</div>
+            <div class="matriz-numero">1</div>
+
+            <div class="matriz-numero">1</div>
+            <div class="matriz-numero">3</div>
+
+        </div>
+
+        <p>
+            Essa matriz contém os coeficientes das incógnitas do sistema.
         </p>
 
         <hr>
 
-        <h2>
-            6. Regra de Cramer
-        </h2>
+        <h2>8️⃣ Sistemas Lineares no CRIPTO.MAT</h2>
 
         <p>
-            A Regra de Cramer utiliza
-            determinantes para resolver
-            sistemas lineares.
-        </p>
-
-        <p>
-            Fórmula:
+            Após a criptografia matricial, o CRIPTO.MAT pode aplicar uma segunda camada de segurança utilizando um sistema linear.
         </p>
 
         <div class="formula">
 
-            x = Dx / D
-            <br>
+            x' = 2x + y
 
-            y = Dy / D
+            <br><br>
+
+            y' = x + 3y
 
         </div>
 
         <p>
-            Onde:
+            Esse sistema transforma os valores produzidos pela matriz-chave em novos valores criptografados.
         </p>
+
+        <hr>
+
+        <h2>9️⃣ Exemplo com a Palavra BOLA</h2>
+
+        <p>
+            Após a multiplicação matricial obtemos:
+        </p>
+
+        <div class="vetor-card" style="margin:auto;">
+
+            <div class="vetor-numero">44</div>
+            <div class="vetor-numero">57</div>
+
+        </div>
+
+        <p>
+            Aplicando o sistema linear:
+        </p>
+
+        <div class="formula">
+
+            x' = 2(44) + 57
+
+            <br>
+
+            x' = 145
+
+            <br><br>
+
+            y' = 44 + 3(57)
+
+            <br>
+
+            y' = 215
+
+        </div>
+
+        <div class="vetor-card" style="margin:auto;">
+
+            <div class="vetor-numero">145</div>
+            <div class="vetor-numero">215</div>
+
+        </div>
+
+        <p>
+            Esses novos valores representam a segunda camada de criptografia.
+        </p>
+
+        <hr>
+
+        <h2>🔟 Processo de Descriptografia</h2>
+
+        <div class="etapa-destaque">
+
+            🔒 Código Criptografado
+
+            <br><br>
+
+            ⬇
+
+            <br><br>
+
+            Remover Sistema Linear
+
+            <br><br>
+
+            ⬇
+
+            <br><br>
+
+            Aplicar Matriz Inversa
+
+            <br><br>
+
+            ⬇
+
+            <br><br>
+
+            🔓 Mensagem Original
+
+        </div>
+
+        <p>
+            Durante a descriptografia o sistema executa o processo inverso para recuperar exatamente os valores originais.
+        </p>
+
+        <hr>
+
+        <h2>🌎 Aplicações dos Sistemas Lineares</h2>
 
         <ul>
 
-            <li>
-                D = determinante principal
-            </li>
+            <li>Criptografia</li>
 
-            <li>
-                Dx = determinante de x
-            </li>
+            <li>Engenharia</li>
 
-            <li>
-                Dy = determinante de y
-            </li>
+            <li>Economia</li>
+
+            <li>Inteligência Artificial</li>
+
+            <li>Robótica</li>
+
+            <li>Computação Científica</li>
+
+            <li>Controle de Processos</li>
+
+            <li>Modelagem Matemática</li>
 
         </ul>
 
         <hr>
 
-        <h2>
-            7. Sistemas Lineares
-            com Matrizes
-        </h2>
+        <h2>✅ Resumo</h2>
 
         <p>
-            Podemos escrever um sistema
-            usando matrizes:
-        </p>
-
-        <div class="formula">
-
-            [2 1]
-            ×
-            [x]
-            =
-            [10]
-            <br>
-
-            [1 -1]
-            &nbsp;
-            [y]
-            &nbsp;
-            [2]
-
-        </div>
-
-        <p>
-            Isso conecta diretamente
-            sistemas lineares com
-            criptografia matricial,
-            como o CRIPTO.MAT faz.
-        </p>
-
-        <hr>
-
-        <h2>
-            8. Aplicações Reais
-        </h2>
-
-        <ul>
-
-            <li>
-                🚗 Logística e transporte
-            </li>
-
-            <li>
-                💰 Economia
-            </li>
-
-            <li>
-                🏗 Engenharia
-            </li>
-
-            <li>
-                🤖 Inteligência Artificial
-            </li>
-
-            <li>
-                🎮 Jogos digitais
-            </li>
-
-            <li>
-                📊 Ciência de Dados
-            </li>
-
-        </ul>
-
-        <p>
-            Sistemas lineares ajudam
-            a resolver problemas do
-            mundo real envolvendo
-            muitas variáveis ao mesmo tempo.
+            Sistemas lineares são conjuntos de equações utilizados para encontrar valores desconhecidos. Eles podem ser resolvidos por diferentes métodos, representados por matrizes e aplicados em diversas áreas da ciência e tecnologia. No CRIPTO.MAT, eles são utilizados como uma segunda camada de criptografia, aumentando significativamente a segurança da mensagem.
         </p>
 
     </div>
 
 </section>
 
-</main>
-</div>
+<section
+    class="screen"
+    id="ajuda">
 
-<script src="script.js"></script>
+    <div class="card">
 
-</body>
-</html>
+        <h1>
+            ❓ Como Usar
+        </h1>
 
-            <!-- ======================= -->
-            <!-- MATRIZES -->
-            <!-- ======================= -->
+        <ol>
 
-            <section class="screen"
-                id="matrizes">
+            <li>
+                Escolha entre
+                criptografar ou
+                descriptografar.
+            </li>
 
-                <div class="card">
+            <li>
+                Digite sua mensagem.
+            </li>
 
-                    <h2>
-                        📘 Matrizes
-                    </h2>
+            <li>
+                Escolha a matriz-chave.
+            </li>
 
-                    <h3>
-                        O que são Matrizes?
-                    </h3>
+            <li>
+                Visualize a conversão
+                para números.
+            </li>
 
-                    <p>
-                        Imagine uma tabela organizada
-                        em linhas e colunas.
-                        Isso é uma matriz.
-                        Elas ajudam a organizar
-                        informações matemáticas.
-                    </p>
+            <li>
+                Acompanhe os cálculos
+                matemáticos.
+            </li>
 
-                    <div class="formula">
-                        [ 2 4 ]<br>
-                        [ 1 5 ]
-                    </div>
+            <li>
+                Veja o resultado final.
+            </li>
 
-                    <h3>
-                        Elementos de uma Matriz
-                    </h3>
+        </ol>
 
-                    <p>
-                        Cada número dentro da matriz
-                        é chamado de elemento.
-                        O primeiro número está na
-                        linha 1 coluna 1.
-                    </p>
+        <div class="etapa-destaque">
 
-                    <h3>
-                        Tipos de Matrizes
-                    </h3>
+            💡 Para descriptografar,
+            utilize exatamente a mesma
+            matriz usada na criptografia.
 
-                    <ul>
-
-                        <li>
-                            Matriz quadrada
-                        </li>
-
-                        <li>
-                            Matriz identidade
-                        </li>
-
-                        <li>
-                            Matriz diagonal
-                        </li>
-
-                        <li>
-                            Matriz triangular
-                        </li>
-
-                        <li>
-                            Matriz nula
-                        </li>
-
-                    </ul>
-
-                    <h3>
-                        Operações com Matrizes
-                    </h3>
-
-                    <p>
-                        Podemos somar, subtrair
-                        e multiplicar matrizes.
-                    </p>
-
-                    <h3>
-                        Determinante
-                    </h3>
-
-                    <p>
-                        Para matrizes 2×2:
-                    </p>
-
-                    <div class="formula">
-                        det(A)=ad−bc
-                    </div>
-
-                    <p>
-                        Exemplo:
-                    </p>
-
-                    <div class="formula">
-                        [2 3]<br>
-                        [1 4]
-                    </div>
-
-                    <p>
-                        det(A)=
-                        (2×4)-(3×1)=5
-                    </p>
-
-                    <h3>
-                        Aplicações Práticas
-                    </h3>
-
-                    <ul>
-
-                        <li>
-                            Criptografia
-                        </li>
-
-                        <li>
-                            Jogos digitais
-                        </li>
-
-                        <li>
-                            Inteligência Artificial
-                        </li>
-
-                        <li>
-                            Engenharia
-                        </li>
-
-                    </ul>
-
-                </div>
-
-            </section>
-
-            <!-- ======================= -->
-            <!-- SISTEMAS LINEARES -->
-            <!-- ======================= -->
-
-            <section class="screen"
-                id="sistemas">
-
-                <div class="card">
-
-                    <h2>
-                        📗 Sistemas Lineares
-                    </h2>
-
-                    <h3>
-                        O que são?
-                    </h3>
-
-                    <p>
-                        Um sistema linear é um conjunto
-                        de equações matemáticas.
-                    </p>
-
-                    <div class="formula">
-                        2x+y=10<br>
-                        x−y=2
-                    </div>
-
-                    <h3>
-                        Como Resolver?
-                    </h3>
-
-                    <p>
-                        Podemos usar:
-                    </p>
-
-                    <ul>
-
-                        <li>Substituição</li>
-                        <li>Adição</li>
-                        <li>Escalonamento</li>
-                        <li>Matrizes</li>
-                        <li>Regra de Cramer</li>
-
-                    </ul>
-
-                    <h3>
-                        Exemplo Resolvido
-                    </h3>
-
-                    <p>
-                        x−y=2
-                        <br>
-                        x=2+y
-                    </p>
-
-                    <p>
-                        Substituindo:
-                    </p>
-
-                    <div class="formula">
-                        2(2+y)+y=10
-                    </div>
-
-                    <p>
-                        Resultado:
-                        x=4 e y=2
-                    </p>
-
-                    <h3>
-                        Aplicações
-                    </h3>
-
-                    <ul>
-
-                        <li>Economia</li>
-                        <li>Engenharia</li>
-                        <li>IA</li>
-                        <li>Jogos</li>
-
-                    </ul>
-
-                </div>
-
-            </section>
-
-        </main>
+        </div>
 
     </div>
 
-    <script src="script.js"></script>
+</section>
+
+
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 
