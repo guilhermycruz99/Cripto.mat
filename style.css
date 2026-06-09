@@ -4,326 +4,252 @@
    RESET + LAYOUT PRINCIPAL
 ========================================= */
 
-
 /* =========================================
    RESET
 ========================================= */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
 
 /* =========================================
    BODY
 ========================================= */
 
-body{
+body {
+  font-family: "Poppins", sans-serif;
 
-    font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg, #e9edff, #d7defd);
 
-    background:
-    linear-gradient(
-        135deg,
-        #e9edff,
-        #d7defd
-    );
+  overflow-x: hidden;
 
-    overflow-x:hidden;
-
-    min-height:100vh;
+  min-height: 100vh;
 }
-
 
 /* =========================================
    CONTAINER
 ========================================= */
 
-.container{
+.container {
+  display: flex;
 
-    display:flex;
-
-    min-height:100vh;
+  min-height: 100vh;
 }
-
 
 /* =========================================
    MENU LATERAL
 ========================================= */
 
-.sidebar{
+.sidebar {
+  width: 290px;
 
-    width:290px;
+  background: linear-gradient(180deg, #4b2aad, #28145f);
 
-    background:
-    linear-gradient(
-        180deg,
-        #4b2aad,
-        #28145f
-    );
+  color: white;
 
-    color:white;
+  padding: 30px 20px;
 
-    padding:30px 20px;
+  position: fixed;
 
-    position:fixed;
+  left: 0;
 
-    left:0;
+  top: 0;
 
-    top:0;
+  height: 100vh;
 
-    height:100vh;
+  overflow-y: auto;
 
-    overflow-y:auto;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
 
-    box-shadow:
-    4px 0 20px rgba(
-        0,
-        0,
-        0,
-        .15
-    );
-
-    z-index:100;
+  z-index: 100;
 }
-
 
 /* =========================================
    LOGO MENU
 ========================================= */
 
-.logo-sidebar{
+.logo-sidebar {
+  margin-bottom: 30px;
 
-    margin-bottom:30px;
-
-    text-align:center;
+  text-align: center;
 }
 
-.logo-sidebar h1{
+.logo-sidebar h1 {
+  font-size: 30px;
 
-    font-size:30px;
-
-    margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
-.logo-sidebar p{
+.logo-sidebar p {
+  font-size: 14px;
 
-    font-size:14px;
+  opacity: 0.8;
 
-    opacity:.8;
-
-    line-height:1.5;
+  line-height: 1.5;
 }
-
 
 /* =========================================
    BOTÕES MENU
 ========================================= */
 
-.sidebar button{
+.sidebar button {
+  width: 100%;
 
-    width:100%;
+  border: none;
 
-    border:none;
+  padding: 16px;
 
-    padding:16px;
+  margin-bottom: 15px;
 
-    margin-bottom:15px;
+  border-radius: 16px;
 
-    border-radius:16px;
+  background: rgba(255, 255, 255, 0.12);
 
-    background:
-    rgba(
-        255,
-        255,
-        255,
-        .12
-    );
+  color: white;
 
-    color:white;
+  font-size: 16px;
 
-    font-size:16px;
+  cursor: pointer;
 
-    cursor:pointer;
+  transition: 0.3s;
 
-    transition:.3s;
+  text-align: left;
 
-    text-align:left;
-
-    font-weight:500;
+  font-weight: 500;
 }
 
-.sidebar button:hover{
+.sidebar button:hover {
+  background: rgba(255, 255, 255, 0.2);
 
-    background:
-    rgba(
-        255,
-        255,
-        255,
-        .2
-    );
-
-    transform:
-    translateX(5px);
+  transform: translateX(5px);
 }
-
 
 /* =========================================
    CONTEÚDO
 ========================================= */
 
-.content{
+.content {
+  margin-left: 290px;
 
-    margin-left:290px;
+  width: calc(100% - 290px);
 
-    width:calc(
-        100% - 290px
-    );
-
-    padding:40px;
+  padding: 40px;
 }
-
 
 /* =========================================
    TELAS
 ========================================= */
 
-.screen{
+.screen {
+  display: none;
 
-    display:none;
-
-    animation:
-    fade .5s ease;
+  animation: fade 0.5s ease;
 }
 
-.screen.active{
-
-    display:block;
+.screen.active {
+  display: block;
 }
-
 
 /* =========================================
    ANIMAÇÃO
 ========================================= */
 
-@keyframes fade{
+@keyframes fade {
+  from {
+    opacity: 0;
 
-    from{
+    transform: translateY(20px);
+  }
 
-        opacity:0;
+  to {
+    opacity: 1;
 
-        transform:
-        translateY(20px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-    }
+    transform: translateY(0);
+  }
 }
-
 
 /* =========================================
    CARD PRINCIPAL
 ========================================= */
 
-.card{
+.card {
+  background: white;
 
-    background:white;
+  border-radius: 30px;
 
-    border-radius:30px;
+  padding: 40px;
 
-    padding:40px;
+  max-width: 1200px;
 
-    max-width:1200px;
+  margin: auto;
 
-    margin:auto;
-
-    box-shadow:
-    0 15px 35px rgba(
-        0,
-        0,
-        0,
-        .08
-    );
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
-
 
 /* =========================================
    TÍTULOS
 ========================================= */
 
-.card h1{
+.card h1 {
+  color: #4b2aad;
 
-    color:#4b2aad;
+  font-size: 52px;
 
-    font-size:52px;
+  text-align: center;
 
-    text-align:center;
-
-    margin-bottom:15px;
+  margin-bottom: 15px;
 }
 
-.card h2{
+.card h2 {
+  color: #4b2aad;
 
-    color:#4b2aad;
+  margin-bottom: 20px;
 
-    margin-bottom:20px;
-
-    font-size:32px;
+  font-size: 32px;
 }
 
-.card h3{
+.card h3 {
+  color: #333;
 
-    color:#333;
+  margin-top: 25px;
 
-    margin-top:25px;
+  margin-bottom: 10px;
 
-    margin-bottom:10px;
-
-    text-align:center;
+  text-align: center;
 }
 
-.card h4{
+.card h4 {
+  margin-top: 20px;
 
-    margin-top:20px;
-
-    color:#4b2aad;
+  color: #4b2aad;
 }
-
 
 /* =========================================
    PARÁGRAFOS
 ========================================= */
 
-.card p{
+.card p {
+  line-height: 1.9;
 
-    line-height:1.9;
+  color: #555;
 
-    color:#555;
-
-    margin-top:10px;
+  margin-top: 10px;
 }
-
 
 /* =========================================
    SEPARADOR
 ========================================= */
 
-hr{
+hr {
+  border: none;
 
-    border:none;
+  height: 2px;
 
-    height:2px;
+  background: #e7e7e7;
 
-    background:#e7e7e7;
-
-    margin:40px 0;
+  margin: 40px 0;
 }
 
 /* =========================================
@@ -331,351 +257,294 @@ hr{
    FORMULÁRIOS E BOTÕES
 ========================================= */
 
-
 /* =========================================
    BOTÕES PRINCIPAIS
 ========================================= */
 
-.menu-buttons{
+.menu-buttons {
+  display: flex;
 
-    display:flex;
+  flex-wrap: wrap;
 
-    flex-wrap:wrap;
+  gap: 15px;
 
-    gap:15px;
-
-    margin-top:35px;
+  margin-top: 35px;
 }
 
 .btn-purple,
 .btn-green,
 .btn-blue,
 .next-btn,
-.back-btn{
+.back-btn {
+  border: none;
 
-    border:none;
+  padding: 16px 24px;
 
-    padding:16px 24px;
+  border-radius: 15px;
 
-    border-radius:15px;
+  cursor: pointer;
 
-    cursor:pointer;
+  font-size: 16px;
 
-    font-size:16px;
+  font-weight: 600;
 
-    font-weight:600;
+  color: white;
 
-    color:white;
-
-    transition:.3s;
+  transition: 0.3s;
 }
 
-.btn-purple{
-
-    background:#6d3df7;
+.btn-purple {
+  background: #6d3df7;
 }
 
-.btn-green{
-
-    background:#16b364;
+.btn-green {
+  background: #16b364;
 }
 
-.btn-blue{
-
-    background:#2d8cff;
+.btn-blue {
+  background: #2d8cff;
 }
 
-.next-btn{
-
-    background:#6d3df7;
+.next-btn {
+  background: #6d3df7;
 }
 
-.back-btn{
-
-    background:#8f8f8f;
+.back-btn {
+  background: #8f8f8f;
 }
 
 .btn-purple:hover,
 .btn-green:hover,
 .btn-blue:hover,
 .next-btn:hover,
-.back-btn:hover{
+.back-btn:hover {
+  transform: translateY(-3px);
 
-    transform:
-    translateY(-3px);
-
-    box-shadow:
-    0 8px 20px rgba(
-        0,
-        0,
-        0,
-        .15
-    );
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 /* =========================================
    ÁREA DE TEXTO
 ========================================= */
 
-textarea{
+textarea {
+  width: 100%;
 
-    width:100%;
+  min-height: 180px;
 
-    min-height:180px;
+  border-radius: 20px;
 
-    border-radius:20px;
+  border: 2px solid #ddd;
 
-    border:2px solid #ddd;
+  padding: 20px;
 
-    padding:20px;
+  margin-top: 15px;
 
-    margin-top:15px;
+  font-size: 17px;
 
-    font-size:17px;
+  resize: none;
 
-    resize:none;
+  outline: none;
 
-    outline:none;
+  transition: 0.3s;
 
-    transition:.3s;
-
-    font-family:'Poppins',sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-textarea:focus{
+textarea:focus {
+  border-color: #6d3df7;
 
-    border-color:#6d3df7;
-
-    box-shadow:
-    0 0 15px rgba(
-        109,
-        61,
-        247,
-        .15
-    );
+  box-shadow: 0 0 15px rgba(109, 61, 247, 0.15);
 }
-
 
 /* =========================================
    MATRIZ DE ENTRADA
 ========================================= */
 
-.matrix-input{
+.matrix-input {
+  display: grid;
 
-    display:grid;
+  grid-template-columns: repeat(2, 120px);
 
-    grid-template-columns:
-    repeat(
-        2,
-        120px
-    );
+  gap: 20px;
 
-    gap:20px;
+  justify-content: center;
 
-    justify-content:center;
-
-    margin:35px 0;
+  margin: 35px 0;
 }
 
-.matrix-input input{
+.matrix-input input {
+  height: 80px;
 
-    height:80px;
+  border-radius: 20px;
 
-    border-radius:20px;
+  border: 2px solid #ddd;
 
-    border:2px solid #ddd;
+  font-size: 28px;
 
-    font-size:28px;
+  text-align: center;
 
-    text-align:center;
+  outline: none;
 
-    outline:none;
+  transition: 0.3s;
 
-    transition:.3s;
-
-    font-weight:bold;
+  font-weight: bold;
 }
 
-.matrix-input input:focus{
+.matrix-input input:focus {
+  border-color: #6d3df7;
 
-    border-color:#6d3df7;
-
-    box-shadow:
-    0 0 15px rgba(
-        109,
-        61,
-        247,
-        .15
-    );
+  box-shadow: 0 0 15px rgba(109, 61, 247, 0.15);
 }
-
 
 /* =========================================
    RADIO BUTTONS
 ========================================= */
 
-.radio-group{
+.radio-group {
+  display: flex;
 
-    display:flex;
+  gap: 35px;
 
-    gap:35px;
+  margin: 25px 0;
 
-    margin:25px 0;
-
-    flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
-.radio-group label{
+.radio-group label {
+  font-size: 17px;
 
-    font-size:17px;
+  font-weight: 500;
 
-    font-weight:500;
+  display: flex;
 
-    display:flex;
+  align-items: center;
 
-    align-items:center;
-
-    gap:8px;
+  gap: 8px;
 }
 
-.radio-group input{
-
-    transform:scale(1.2);
+.radio-group input {
+  transform: scale(1.2);
 }
-
 
 /* =========================================
    RESULT BOX
 ========================================= */
 
-.result-box{
+.result-box {
+  background: #f5f5ff;
 
-    background:#f5f5ff;
+  border-left: 6px solid #6d3df7;
 
-    border-left:6px solid #6d3df7;
+  padding: 25px;
 
-    padding:25px;
+  border-radius: 18px;
 
-    border-radius:18px;
+  margin-top: 20px;
 
-    margin-top:20px;
+  min-height: 120px;
 
-    min-height:120px;
+  font-size: 18px;
 
-    font-size:18px;
+  line-height: 1.9;
 
-    line-height:1.9;
-
-    word-break:break-word;
+  word-break: break-word;
 }
-
 
 /* =========================================
    FÓRMULAS
 ========================================= */
 
-.formula{
+.formula {
+  background: #eef1ff;
 
-    background:#eef1ff;
+  border-left: 6px solid #4b2aad;
 
-    border-left:6px solid #4b2aad;
+  padding: 25px;
 
-    padding:25px;
+  border-radius: 20px;
 
-    border-radius:20px;
+  margin: 20px 0;
 
-    margin:20px 0;
+  font-size: 22px;
 
-    font-size:22px;
+  text-align: center;
 
-    text-align:center;
+  color: #4b2aad;
 
-    color:#4b2aad;
-
-    font-weight:bold;
+  font-weight: bold;
 }
-
 
 /* =========================================
    BOTÕES INFERIORES
 ========================================= */
 
-.buttons{
+.buttons {
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
+  gap: 15px;
 
-    gap:15px;
-
-    margin-top:35px;
+  margin-top: 35px;
 }
-
 
 /* =========================================
    BOTÃO SUPERIOR
 ========================================= */
 
-.top-nav{
+.top-nav {
+  display: flex;
 
-    display:flex;
+  justify-content: flex-end;
 
-    justify-content:flex-end;
-
-    margin-bottom:20px;
+  margin-bottom: 20px;
 }
-
 
 /* =========================================
    CHECKBOX SISTEMA LINEAR
 ========================================= */
 
-.modo-avancado{
+.modo-avancado {
+  margin-top: 20px;
 
-    margin-top:20px;
+  padding: 15px;
 
-    padding:15px;
+  background: #fff8d6;
 
-    background:#fff8d6;
+  border-left: 5px solid #ffd54f;
 
-    border-left:5px solid #ffd54f;
+  border-radius: 12px;
 
-    border-radius:12px;
-
-    font-weight:600;
+  font-weight: 600;
 }
 
-.modo-avancado input{
+.modo-avancado input {
+  margin-right: 10px;
 
-    margin-right:10px;
-
-    transform:scale(1.2);
+  transform: scale(1.2);
 }
-
 
 /* =========================================
    LISTAS
 ========================================= */
 
 ul,
-ol{
+ol {
+  margin-top: 20px;
 
-    margin-top:20px;
-
-    padding-left:25px;
+  padding-left: 25px;
 }
 
 ul li,
-ol li{
+ol li {
+  margin-bottom: 14px;
 
-    margin-bottom:14px;
+  color: #444;
 
-    color:#444;
-
-    line-height:1.8;
+  line-height: 1.8;
 }
 
 /* =========================================
@@ -683,311 +552,240 @@ ol li{
    TELA INICIAL MODERNA
 ========================================= */
 
-
 /* =========================================
    TEXTO INTRODUÇÃO
 ========================================= */
 
-.intro-text{
+.intro-text {
+  text-align: center;
 
-    text-align:center;
+  max-width: 800px;
 
-    max-width:800px;
+  margin: auto;
 
-    margin:auto;
+  font-size: 18px;
 
-    font-size:18px;
-
-    line-height:1.9;
+  line-height: 1.9;
 }
-
 
 /* =========================================
    HERO BANNER
 ========================================= */
 
-.hero-banner{
+.hero-banner {
+  margin: 30px 0;
 
-    margin:30px 0;
+  background: linear-gradient(135deg, #6d3df7, #4b2aad);
 
-    background:
-    linear-gradient(
-        135deg,
-        #6d3df7,
-        #4b2aad
-    );
+  color: white;
 
-    color:white;
+  padding: 30px;
 
-    padding:30px;
+  border-radius: 25px;
 
-    border-radius:25px;
+  display: flex;
 
-    display:flex;
+  align-items: center;
 
-    align-items:center;
+  gap: 25px;
 
-    gap:25px;
-
-    box-shadow:
-    0 15px 30px rgba(
-        109,
-        61,
-        247,
-        .25
-    );
+  box-shadow: 0 15px 30px rgba(109, 61, 247, 0.25);
 }
 
-.hero-banner h3{
+.hero-banner h3 {
+  color: white;
 
-    color:white;
+  text-align: left;
 
-    text-align:left;
-
-    margin:0 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
-.hero-banner p{
+.hero-banner p {
+  color: white;
 
-    color:white;
+  opacity: 0.95;
 
-    opacity:.95;
-
-    margin:0;
+  margin: 0;
 }
 
-.hero-icon{
+.hero-icon {
+  font-size: 70px;
 
-    font-size:70px;
+  min-width: 90px;
 
-    min-width:90px;
-
-    text-align:center;
+  text-align: center;
 }
-
 
 /* =========================================
    CARDS DE RECURSOS
 ========================================= */
 
-.features{
+.features {
+  display: grid;
 
-    display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
-    grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(
-            220px,
-            1fr
-        )
-    );
+  gap: 20px;
 
-    gap:20px;
-
-    margin-top:35px;
+  margin-top: 35px;
 }
 
-.feature-card{
+.feature-card {
+  background: white;
 
-    background:white;
+  padding: 25px;
 
-    padding:25px;
+  border-radius: 20px;
 
-    border-radius:20px;
+  text-align: center;
 
-    text-align:center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 
-    box-shadow:
-    0 8px 20px rgba(
-        0,
-        0,
-        0,
-        .08
-    );
-
-    transition:.3s;
+  transition: 0.3s;
 }
 
-.feature-card:hover{
+.feature-card:hover {
+  transform: translateY(-6px);
 
-    transform:
-    translateY(-6px);
-
-    box-shadow:
-    0 15px 30px rgba(
-        0,
-        0,
-        0,
-        .12
-    );
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
 }
 
-.feature-card h3{
+.feature-card h3 {
+  color: #4b2aad;
 
-    color:#4b2aad;
-
-    margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
-.feature-card p{
-
-    margin-top:0;
+.feature-card p {
+  margin-top: 0;
 }
-
 
 /* =========================================
    EXEMPLO BOLA
 ========================================= */
 
-.demo-cripto-card{
+.demo-cripto-card {
+  margin: 40px 0;
 
-    margin:40px 0;
+  padding: 30px;
 
-    padding:30px;
+  background: white;
 
-    background:white;
+  border-radius: 25px;
 
-    border-radius:25px;
+  border: 2px solid #eef1ff;
 
-    border:2px solid #eef1ff;
-
-    box-shadow:
-    0 10px 25px rgba(
-        0,
-        0,
-        0,
-        .08
-    );
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-.demo-cripto-card h3{
-
-    color:#4b2aad;
+.demo-cripto-card h3 {
+  color: #4b2aad;
 }
 
-.demo-subtitulo{
+.demo-subtitulo {
+  text-align: center;
 
-    text-align:center;
-
-    margin-bottom:30px;
+  margin-bottom: 30px;
 }
-
 
 /* =========================================
    FLUXO VISUAL
 ========================================= */
 
-.fluxo-cripto{
+.fluxo-cripto {
+  display: flex;
 
-    display:flex;
+  justify-content: center;
 
-    justify-content:center;
+  align-items: center;
 
-    align-items:center;
+  flex-wrap: wrap;
 
-    flex-wrap:wrap;
-
-    gap:15px;
+  gap: 15px;
 }
 
-.etapa{
-
-    text-align:center;
+.etapa {
+  text-align: center;
 }
 
-.etapa-titulo{
+.etapa-titulo {
+  display: block;
 
-    display:block;
+  margin-bottom: 10px;
 
-    margin-bottom:10px;
+  font-weight: 600;
 
-    font-weight:600;
-
-    color:#4b2aad;
+  color: #4b2aad;
 }
 
-.etapa-box{
+.etapa-box {
+  background: #eef1ff;
 
-    background:#eef1ff;
+  padding: 15px 20px;
 
-    padding:15px 20px;
+  border-radius: 15px;
 
-    border-radius:15px;
+  min-width: 150px;
 
-    min-width:150px;
+  font-weight: 600;
 
-    font-weight:600;
+  color: #4b2aad;
 
-    color:#4b2aad;
-
-    box-shadow:
-    0 4px 10px rgba(
-        0,
-        0,
-        0,
-        .05
-    );
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
-
 
 /* =========================================
    SETAS
 ========================================= */
 
-.seta{
+.seta {
+  font-size: 32px;
 
-    font-size:32px;
+  color: #6d3df7;
 
-    color:#6d3df7;
-
-    font-weight:bold;
+  font-weight: bold;
 }
-
 
 /* =========================================
    RESULTADO FINAL DO EXEMPLO
 ========================================= */
 
-.resultado-demo{
+.resultado-demo {
+  background: #e7f8ee;
 
-    background:#e7f8ee;
+  border: 2px solid #16b364;
 
-    border:2px solid #16b364;
+  padding: 15px 20px;
 
-    padding:15px 20px;
+  border-radius: 15px;
 
-    border-radius:15px;
+  font-weight: bold;
 
-    font-weight:bold;
+  color: #16b364;
 
-    color:#16b364;
+  min-width: 170px;
 
-    min-width:170px;
-
-    text-align:center;
+  text-align: center;
 }
-
 
 /* =========================================
    EXPLICAÇÃO EXEMPLO
 ========================================= */
 
-.explicacao-demo{
+.explicacao-demo {
+  margin-top: 30px;
 
-    margin-top:30px;
+  padding: 18px;
 
-    padding:18px;
+  background: #f7f8ff;
 
-    background:#f7f8ff;
+  border-left: 5px solid #6d3df7;
 
-    border-left:5px solid #6d3df7;
+  border-radius: 12px;
 
-    border-radius:12px;
+  text-align: center;
 
-    text-align:center;
-
-    color:#555;
+  color: #555;
 }
 
 /* =========================================
@@ -995,374 +793,300 @@ ol li{
    MATRIZES E OPERAÇÕES VISUAIS
 ========================================= */
 
-
 /* =========================================
    MATRIZ 2x2
 ========================================= */
 
-.matriz-card{
+.matriz-card {
+  display: grid;
 
-    display:grid;
+  grid-template-columns: repeat(2, 60px);
 
-    grid-template-columns:
-    repeat(
-        2,
-        60px
-    );
+  gap: 8px;
 
-    gap:8px;
+  padding: 12px;
 
-    padding:12px;
+  background: #fff8d6;
 
-    background:#fff8d6;
+  border: 2px solid #ffd54f;
 
-    border:2px solid #ffd54f;
+  border-radius: 18px;
 
-    border-radius:18px;
+  width: max-content;
 
-    width:max-content;
+  margin: 0;
 
-    margin:0;
-
-    box-shadow:
-    0 4px 12px rgba(
-        255,
-        213,
-        79,
-        .25
-    );
+  box-shadow: 0 4px 12px rgba(255, 213, 79, 0.25);
 }
-
 
 /* MATRIZ MAIOR */
 
-.matriz-card.grande{
+.matriz-card.grande {
+  transform: scale(1.15);
 
-    transform:scale(1.15);
-
-    margin:30px auto;
+  margin: 30px auto;
 }
-
 
 /* =========================================
    CÉLULAS DA MATRIZ
 ========================================= */
 
-.matriz-numero{
+.matriz-numero {
+  width: 60px;
 
-    width:60px;
+  height: 60px;
 
-    height:60px;
+  display: flex;
 
-    display:flex;
+  justify-content: center;
 
-    justify-content:center;
+  align-items: center;
 
-    align-items:center;
+  background: white;
 
-    background:white;
+  border-radius: 12px;
 
-    border-radius:12px;
+  font-size: 22px;
 
-    font-size:22px;
+  font-weight: bold;
 
-    font-weight:bold;
+  color: #4b2aad;
 
-    color:#4b2aad;
-
-    box-shadow:
-    0 2px 6px rgba(
-        0,
-        0,
-        0,
-        .08
-    );
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
-
 
 /* =========================================
    VETORES
 ========================================= */
 
-.vetor-card{
+.vetor-card {
+  display: flex;
 
-    display:flex;
+  flex-direction: column;
 
-    flex-direction:column;
+  gap: 8px;
 
-    gap:8px;
+  background: #eef1ff;
 
-    background:#eef1ff;
+  padding: 12px;
 
-    padding:12px;
+  border-radius: 18px;
 
-    border-radius:18px;
+  border: 2px solid #d9e0ff;
 
-    border:2px solid #d9e0ff;
-
-    width:max-content;
+  width: max-content;
 }
-
 
 /* =========================================
    NÚMEROS DOS VETORES
 ========================================= */
 
-.vetor-numero{
+.vetor-numero {
+  width: 60px;
 
-    width:60px;
+  height: 60px;
 
-    height:60px;
+  display: flex;
 
-    display:flex;
+  justify-content: center;
 
-    justify-content:center;
+  align-items: center;
 
-    align-items:center;
+  background: white;
 
-    background:white;
+  border-radius: 12px;
 
-    border-radius:12px;
+  font-size: 22px;
 
-    font-size:22px;
+  font-weight: bold;
 
-    font-weight:bold;
+  color: #4b2aad;
 
-    color:#4b2aad;
-
-    box-shadow:
-    0 2px 6px rgba(
-        0,
-        0,
-        0,
-        .08
-    );
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
-
 
 /* =========================================
    OPERAÇÕES MATRICIAIS
 ========================================= */
 
-.operacao-matriz{
+.operacao-matriz {
+  display: flex;
 
-    display:flex;
+  justify-content: center;
 
-    justify-content:center;
+  align-items: center;
 
-    align-items:center;
+  gap: 8px;
 
-    gap:8px;
+  flex-wrap: nowrap;
 
-    flex-wrap:nowrap;
-
-    margin:15px 0;
+  margin: 15px 0;
 }
 
 /* =========================================
    OPERADORES
 ========================================= */
 
-.operador{
+.operador {
+  font-size: 36px;
 
-    font-size:36px;
+  font-weight: bold;
 
-    font-weight:bold;
+  color: #6d3df7;
 
-    color:#6d3df7;
+  min-width: 20px;
 
-    min-width:20px;
+  margin: 0 2px;
 
-    margin:0 2px;
-
-    text-align:center;
+  text-align: center;
 }
-
 
 /* =========================================
    PROCESSO MATEMÁTICO
 ========================================= */
 
-.processo-operacao{
+.processo-operacao {
+  display: flex;
 
-    display:flex;
+  justify-content: center;
 
-    justify-content:center;
+  align-items: center;
 
-    align-items:center;
+  gap: 8px;
 
-    gap:8px;
+  flex-wrap: nowrap;
 
-    flex-wrap:nowrap;
-
-    margin:15px 0;
+  margin: 15px 0;
 }
-
 
 /* =========================================
    MATRIZ NO PROCESSO
 ========================================= */
 
-.processo-matriz{
+.processo-matriz {
+  display: grid;
 
-    display:grid;
+  grid-template-columns: repeat(2, 70px);
 
-    grid-template-columns:
-    repeat(
-        2,
-        70px
-    );
+  gap: 8px;
 
-    gap:8px;
+  background: #fff8d6;
 
-    background:#fff8d6;
+  padding: 12px;
 
-    padding:12px;
+  border-radius: 18px;
 
-    border-radius:18px;
-
-    border:2px solid #ffd54f;
+  border: 2px solid #ffd54f;
 }
-
 
 /* =========================================
    VETOR NO PROCESSO
 ========================================= */
 
-.processo-vetor{
+.processo-vetor {
+  display: flex;
 
-    display:flex;
+  flex-direction: column;
 
-    flex-direction:column;
+  gap: 8px;
 
-    gap:8px;
+  background: #eef1ff;
 
-    background:#eef1ff;
+  padding: 12px;
 
-    padding:12px;
+  border-radius: 18px;
 
-    border-radius:18px;
-
-    border:2px solid #d9e0ff;
+  border: 2px solid #d9e0ff;
 }
-
 
 /* =========================================
    CÉLULAS PROCESSO
 ========================================= */
 
-.processo-celula{
+.processo-celula {
+  width: 70px;
 
-    width:70px;
+  height: 70px;
 
-    height:70px;
+  display: flex;
 
-    display:flex;
+  justify-content: center;
 
-    justify-content:center;
+  align-items: center;
 
-    align-items:center;
+  background: white;
 
-    background:white;
+  border-radius: 12px;
 
-    border-radius:12px;
+  font-size: 22px;
 
-    font-size:22px;
+  font-weight: bold;
 
-    font-weight:bold;
+  color: #4b2aad;
 
-    color:#4b2aad;
-
-    box-shadow:
-    0 2px 6px rgba(
-        0,
-        0,
-        0,
-        .08
-    );
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
-
 
 /* =========================================
    OPERADOR PROCESSO
 ========================================= */
 
-.processo-operador{
+.processo-operador {
+  font-size: 42px;
 
-    font-size:42px;
+  font-weight: bold;
 
-    font-weight:bold;
-
-    color:#6d3df7;
+  color: #6d3df7;
 }
-
 
 /* =========================================
    CONTAINER DE VETORES
 ========================================= */
 
-.vetores-container{
+.vetores-container {
+  display: flex;
 
-    display:flex;
+  justify-content: center;
 
-    justify-content:center;
+  gap: 30px;
 
-    gap:30px;
+  flex-wrap: wrap;
 
-    flex-wrap:wrap;
-
-    margin:25px 0;
+  margin: 25px 0;
 }
-
 
 /* =========================================
    CARDS DE LETRAS
 ========================================= */
 
-.cards-letras{
+.cards-letras {
+  display: grid;
 
-    display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
 
-    grid-template-columns:
-    repeat(
-        auto-fit,
-        minmax(
-            140px,
-            1fr
-        )
-    );
+  gap: 15px;
 
-    gap:15px;
-
-    margin:25px 0;
+  margin: 25px 0;
 }
-
 
 /* =========================================
    CARD DE LETRA
 ========================================= */
 
-.letra-card{
+.letra-card {
+  background: white;
 
-    background:white;
+  padding: 18px;
 
-    padding:18px;
+  border-radius: 15px;
 
-    border-radius:15px;
+  text-align: center;
 
-    text-align:center;
+  font-weight: 600;
 
-    font-weight:600;
+  color: #4b2aad;
 
-    color:#4b2aad;
-
-    box-shadow:
-    0 4px 10px rgba(
-        0,
-        0,
-        0,
-        .08
-    );
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================================
@@ -1370,55 +1094,66 @@ ol li{
    RESULTADOS E EXPLICAÇÕES
 ========================================= */
 
-
 /* =========================================
    ETAPAS DESTACADAS
 ========================================= */
 
-.etapa-destaque{
+.etapa-destaque {
+  background: linear-gradient(135deg, #6d3df7, #4b2aad);
 
-    background:
-    linear-gradient(
-        135deg,
-        #6d3df7,
-        #4b2aad
-    );
+  color: white;
 
-    color:white;
+  padding: 25px;
 
-    padding:25px;
+  border-radius: 20px;
 
-    border-radius:20px;
+  text-align: center;
 
-    text-align:center;
+  font-size: 28px;
 
-    font-size:28px;
+  font-weight: bold;
 
-    font-weight:bold;
+  margin: 30px 0;
 
-    margin:30px 0;
-
-    box-shadow:
-    0 10px 25px rgba(
-        109,
-        61,
-        247,
-        .25
-    );
+  box-shadow: 0 10px 25px rgba(109, 61, 247, 0.25);
 }
-
 
 /* =========================================
    RESULTADO DE CADA ETAPA
 ========================================= */
 
-.resultado-etapa{
+.resultado-etapa {
+  background: #eef9ff;
 
-    background:#eef9ff;
+  border-left: 6px solid #2d8cff;
 
-    border-left:6px solid #2d8cff;
+  padding: 20px;
 
-    padding:20px;
+  border-radius: 15px;
+}
 
-    border-radius:15px;
+/* =========================================
+   CONTADOR DE CARACTERES
+========================================= */
+
+.contador-chars {
+  text-align: right;
+
+  margin-top: 8px;
+
+  padding-right: 5px;
+}
+
+#contadorTexto {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #6d3df7;
+
+  background: #eef1ff;
+
+  padding: 4px 14px;
+
+  border-radius: 20px;
 }

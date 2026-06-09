@@ -4,7 +4,6 @@
 // VARIÁVEIS E FUNÇÕES BÁSICAS
 // ======================================
 
-
 // ======================================
 // VARIÁVEIS GLOBAIS
 // ======================================
@@ -21,14 +20,14 @@ let textoFinal = "";
 
 let usarSistemaLinear = false;
 
+let tamanhoRealMensagem = 0;
 
 // ======================================
 // TABELA DE CARACTERES
 // ======================================
 
 const caracteres =
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789áàâãäéèêëíìîïóòôõöúùûüçÇÁÀÂÃÄÉÈÊËÍÌÎÏÓÒÔÕÖÚÙÛÜ .,;:!?\"'()[]{}<>-_+=/*\\|@#$%&\n\t";
-
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789áàâãäéèêëíìîïóòôõöúùûüçÇÁÀÂÃÄÉÈÊËÍÌÎÏÓÒÔÕÖÚÙÛÜ .,;:!?\"'()[]{}<>-_+=/*\\|@#$%&\n\t";
 
 // ======================================
 // MÓDULO
@@ -36,36 +35,22 @@ const caracteres =
 
 const MOD = 251;
 
-
 // ======================================
 // CONTROLE DE TELAS
 // ======================================
 
 function mostrarTela(idTela) {
+  document.querySelectorAll(".screen").forEach((tela) => {
+    tela.classList.remove("active");
+  });
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(tela => {
+  const tela = document.getElementById(idTela);
 
-            tela.classList.remove("active");
-
-        });
-
-    const tela =
-        document.getElementById(idTela);
-
-    if (tela) {
-
-        tela.classList.add("active");
-
-    } else {
-
-        console.error(
-            "Tela não encontrada:",
-            idTela
-        );
-
-    }
+  if (tela) {
+    tela.classList.add("active");
+  } else {
+    console.error("Tela não encontrada:", idTela);
+  }
 }
 
 // ======================================
@@ -73,283 +58,139 @@ function mostrarTela(idTela) {
 // ======================================
 
 function mostrarConteudo(tipo) {
-
-    mostrarTela(tipo);
-
+  mostrarTela(tipo);
 }
-
 
 // ======================================
 // ESCOLHER MODO
 // ======================================
 
 function selecionarModo(modo) {
+  modoAtual = modo;
 
-    modoAtual = modo;
+  document.querySelectorAll('input[name="modo"]').forEach((radio) => {
+    radio.checked = radio.value === modo;
+  });
 
-    document
-        .querySelectorAll(
-            'input[name="modo"]'
-        )
-        .forEach(radio => {
-
-            radio.checked =
-                radio.value === modo;
-
-        });
-
-    mostrarTela("tela2");
-
+  mostrarTela("tela2");
 }
-
 
 // ======================================
 // MOD POSITIVO
 // ======================================
 
 function mod(n, m) {
-
-    return (
-        (
-            n % m
-        ) + m
-    ) % m;
-
+  return ((n % m) + m) % m;
 }
-
 
 // ======================================
 // INVERSO MODULAR
 // ======================================
 
 function inversoModular(a, m) {
+  a = mod(a, m);
 
-    a = mod(a, m);
-
-    for (
-
-        let x = 1;
-
-        x < m;
-
-        x++
-
-    ) {
-
-        if (
-
-            mod(
-                a * x,
-                m
-            ) === 1
-
-        ) {
-
-            return x;
-
-        }
-
+  for (let x = 1; x < m; x++) {
+    if (mod(a * x, m) === 1) {
+      return x;
     }
+  }
 
-    return null;
-
+  return null;
 }
-
 
 // ======================================
 // MATRIZ INVERSA MODULAR
 // ======================================
 
-function matrizInversaModular(
+function matrizInversaModular(a, b, c, d) {
+  const det = mod(
+    a * d - b * c,
 
-    a,
-    b,
-    c,
-    d
+    MOD,
+  );
 
-) {
+  const detInv = inversoModular(
+    det,
 
-    const det = mod(
+    MOD,
+  );
 
-        (
-            a * d
-        )
-        -
-        (
-            b * c
-        ),
+  if (detInv === null) {
+    alert(
+      `Essa matriz não possui inversa modular.
 
-        MOD
-
+Utilize outra matriz-chave.`,
     );
 
-    const detInv = inversoModular(
+    return null;
+  }
 
-        det,
+  return {
+    a: mod(d * detInv, MOD),
 
-        MOD
+    b: mod(-b * detInv, MOD),
 
-    );
+    c: mod(-c * detInv, MOD),
 
-    if (
-
-        detInv === null
-
-    ) {
-
-        alert(
-
-`Essa matriz não possui inversa modular.
-
-Utilize outra matriz-chave.`
-
-        );
-
-        return null;
-
-    }
-
-    return {
-
-        a: mod(
-            d * detInv,
-            MOD
-        ),
-
-        b: mod(
-            -b * detInv,
-            MOD
-        ),
-
-        c: mod(
-            -c * detInv,
-            MOD
-        ),
-
-        d: mod(
-            a * detInv,
-            MOD
-        )
-
-    };
-
+    d: mod(a * detInv, MOD),
+  };
 }
-
 
 // ======================================
 // CONVERSÃO DA MENSAGEM
 // ======================================
 
 function converterMensagem() {
+  modoAtual = document.querySelector('input[name="modo"]:checked').value;
 
-    modoAtual =
-        document.querySelector(
-            'input[name="modo"]:checked'
-        ).value;
+  usarSistemaLinear = document.getElementById("modoAvancado")?.checked || false;
 
-    usarSistemaLinear =
-        document.getElementById(
-            "modoAvancado"
-        )?.checked || false;
+  mensagemAtual = document.getElementById("mensagem").value;
 
+  if (!mensagemAtual.trim()) {
+    alert("Digite uma mensagem.");
 
-    mensagemAtual =
-        document.getElementById(
-            "mensagem"
-        ).value;
+    return;
+  }
 
+  numerosMensagem = [];
 
-    if (
+  // ==========================
+  // CRIPTOGRAFAR
+  // ==========================
 
-        !mensagemAtual.trim()
+  if (modoAtual === "criptografar") {
+    for (let char of mensagemAtual) {
+      const indice = caracteres.indexOf(char);
 
-    ) {
-
-        alert(
-            "Digite uma mensagem."
-        );
-
-        return;
-
+      if (indice !== -1) {
+        numerosMensagem.push(indice);
+      }
     }
+  }
 
+  // ==========================
+  // DESCRIPTOGRAFAR
+  // ==========================
+  else {
+    numerosMensagem = mensagemAtual
+      .split("-")
+      .map(Number)
+      .filter((n) => !isNaN(n));
+  }
 
-    numerosMensagem = [];
+  // ==========================
+  // COMPLETAR PAR
+  // ==========================
 
+  tamanhoRealMensagem = numerosMensagem.length;
 
-    // ==========================
-    // CRIPTOGRAFAR
-    // ==========================
+  if (numerosMensagem.length % 2 !== 0) {
+    numerosMensagem.push(0);
+  }
 
-    if (
-
-        modoAtual ===
-        "criptografar"
-
-    ) {
-
-        for (
-
-            let char
-            of mensagemAtual
-
-        ) {
-
-            const indice =
-                caracteres.indexOf(
-                    char
-                );
-
-            if (
-
-                indice !== -1
-
-            ) {
-
-                numerosMensagem.push(
-                    indice
-                );
-
-            }
-
-        }
-
-    }
-
-    // ==========================
-    // DESCRIPTOGRAFAR
-    // ==========================
-
-    else {
-
-        numerosMensagem =
-            mensagemAtual
-            .split("-")
-            .map(Number)
-            .filter(
-                n => !isNaN(n)
-            );
-
-    }
-
-
-    // ==========================
-    // COMPLETAR PAR
-    // ==========================
-
-    if (
-
-        numerosMensagem.length % 2 !== 0
-
-    ) {
-
-        numerosMensagem.push(0);
-
-    }
-
-
-    mostrarTela("tela3");
-
+  mostrarTela("tela3");
 }
 
 // ======================================
@@ -358,23 +199,15 @@ function converterMensagem() {
 // ======================================
 
 function mostrarConversao() {
+  const textoDiv = document.getElementById("textoOriginal");
 
-    const textoDiv =
-        document.getElementById(
-            "textoOriginal"
-        );
+  const matrizDiv = document.getElementById("matrizTexto");
 
-    const matrizDiv =
-        document.getElementById(
-            "matrizTexto"
-        );
+  // ==================================
+  // TEXTO ORIGINAL
+  // ==================================
 
-
-    // ==================================
-    // TEXTO ORIGINAL
-    // ==================================
-
-    textoDiv.innerHTML = `
+  textoDiv.innerHTML = `
 
         <div style="
             text-align:center;
@@ -390,19 +223,12 @@ function mostrarConversao() {
 
     `;
 
+  // ==================================
+  // CRIPTOGRAFAR
+  // ==================================
 
-    // ==================================
-    // CRIPTOGRAFAR
-    // ==================================
-
-    if (
-
-        modoAtual ===
-        "criptografar"
-
-    ) {
-
-        let html = `
+  if (modoAtual === "criptografar") {
+    let html = `
 
             <h3 style="
                 text-align:center;
@@ -418,18 +244,8 @@ function mostrarConversao() {
             ">
         `;
 
-        for (
-
-            let i = 0;
-
-            i <
-            numerosMensagem.length;
-
-            i++
-
-        ) {
-
-            html += `
+    for (let i = 0; i < numerosMensagem.length; i++) {
+      html += `
 
                 <div class="
                     letra-card
@@ -440,19 +256,17 @@ function mostrarConversao() {
                 </div>
 
             `;
+    }
 
-        }
-
-        html += `
+    html += `
             </div>
         `;
 
+    // ==============================
+    // VETORES
+    // ==============================
 
-        // ==============================
-        // VETORES
-        // ==============================
-
-        html += `
+    html += `
 
             <h3 style="
                 text-align:center;
@@ -468,19 +282,8 @@ function mostrarConversao() {
             ">
         `;
 
-
-        for (
-
-            let i = 0;
-
-            i <
-            numerosMensagem.length;
-
-            i += 2
-
-        ) {
-
-            html += `
+    for (let i = 0; i < numerosMensagem.length; i += 2) {
+      html += `
 
                 <div class="
                     vetor-card
@@ -489,42 +292,32 @@ function mostrarConversao() {
                     <div class="
                         vetor-numero
                     ">
-                        ${
-                            numerosMensagem[i]
-                        }
+                        ${numerosMensagem[i]}
                     </div>
 
                     <div class="
                         vetor-numero
                     ">
-                        ${
-                            numerosMensagem[
-                                i + 1
-                            ]
-                        }
+                        ${numerosMensagem[i + 1]}
                     </div>
 
                 </div>
 
             `;
+    }
 
-        }
-
-        html += `
+    html += `
             </div>
         `;
 
-        matrizDiv.innerHTML =
-            html;
-    }
+    matrizDiv.innerHTML = html;
+  }
 
-    // ==================================
-    // DESCRIPTOGRAFAR
-    // ==================================
-
-    else {
-
-        let html = `
+  // ==================================
+  // DESCRIPTOGRAFAR
+  // ==================================
+  else {
+    let html = `
 
             <h3 style="
                 text-align:center;
@@ -540,39 +333,25 @@ function mostrarConversao() {
             ">
         `;
 
-        for (
-
-            let i = 0;
-
-            i <
-            numerosMensagem.length;
-
-            i++
-
-        ) {
-
-            html += `
+    for (let i = 0; i < numerosMensagem.length; i++) {
+      html += `
 
                 <div class="
                     letra-card
                 ">
 
-                    ${
-                        numerosMensagem[i]
-                    }
+                    ${numerosMensagem[i]}
 
                 </div>
 
             `;
+    }
 
-        }
-
-        html += `
+    html += `
             </div>
         `;
 
-
-        html += `
+    html += `
 
             <div class="
                 resultado-etapa
@@ -586,27 +365,15 @@ function mostrarConversao() {
 
         `;
 
-
-        html += `
+    html += `
 
             <div class="
                 vetores-container
             ">
         `;
 
-
-        for (
-
-            let i = 0;
-
-            i <
-            numerosMensagem.length;
-
-            i += 2
-
-        ) {
-
-            html += `
+    for (let i = 0; i < numerosMensagem.length; i += 2) {
+      html += `
 
                 <div class="
                     vetor-card
@@ -615,39 +382,28 @@ function mostrarConversao() {
                     <div class="
                         vetor-numero
                     ">
-                        ${
-                            numerosMensagem[i]
-                        }
+                        ${numerosMensagem[i]}
                     </div>
 
                     <div class="
                         vetor-numero
                     ">
-                        ${
-                            numerosMensagem[
-                                i + 1
-                            ]
-                        }
+                        ${numerosMensagem[i + 1]}
                     </div>
 
                 </div>
 
             `;
+    }
 
-        }
-
-        html += `
+    html += `
             </div>
         `;
 
-        matrizDiv.innerHTML =
-            html;
-    }
+    matrizDiv.innerHTML = html;
+  }
 
-
-    mostrarTela(
-        "tela4"
-    );
+  mostrarTela("tela4");
 }
 
 // ======================================
@@ -655,26 +411,17 @@ function mostrarConversao() {
 // ======================================
 
 function mostrarProcesso() {
+  const k11 = parseInt(document.getElementById("k11").value);
 
-    const k11 = parseInt(
-        document.getElementById("k11").value
-    );
+  const k12 = parseInt(document.getElementById("k12").value);
 
-    const k12 = parseInt(
-        document.getElementById("k12").value
-    );
+  const k21 = parseInt(document.getElementById("k21").value);
 
-    const k21 = parseInt(
-        document.getElementById("k21").value
-    );
+  const k22 = parseInt(document.getElementById("k22").value);
 
-    const k22 = parseInt(
-        document.getElementById("k22").value
-    );
+  matrizResultado = [];
 
-    matrizResultado = [];
-
-    let html = `
+  let html = `
 
         <div class="resultado-etapa">
 
@@ -682,27 +429,16 @@ function mostrarProcesso() {
 
         </div>
 
-        ${criarMatrizHTML(
-            k11,
-            k12,
-            k21,
-            k22
-        )}
+        ${criarMatrizHTML(k11, k12, k21, k22)}
 
     `;
 
-    // =====================================
-    // CRIPTOGRAFIA
-    // =====================================
+  // =====================================
+  // CRIPTOGRAFIA
+  // =====================================
 
-    if (
-
-        modoAtual ===
-        "criptografar"
-
-    ) {
-
-        html += `
+  if (modoAtual === "criptografar") {
+    html += `
 
             <div class="etapa-destaque">
 
@@ -712,87 +448,42 @@ function mostrarProcesso() {
 
         `;
 
-        for (
+    for (let i = 0; i < numerosMensagem.length; i += 2) {
+      const x = numerosMensagem[i];
 
-            let i = 0;
+      const y = numerosMensagem[i + 1];
 
-            i <
-            numerosMensagem.length;
+      const r1 = mod(
+        k11 * x + k12 * y,
 
-            i += 2
+        MOD,
+      );
 
-        ) {
+      const r2 = mod(
+        k21 * x + k22 * y,
 
-            const x =
-                numerosMensagem[i];
+        MOD,
+      );
 
-            const y =
-                numerosMensagem[i + 1];
-
-            const r1 =
-                mod(
-
-                    (
-                        k11 * x
-                    )
-                    +
-                    (
-                        k12 * y
-                    ),
-
-                    MOD
-
-                );
-
-            const r2 =
-                mod(
-
-                    (
-                        k21 * x
-                    )
-                    +
-                    (
-                        k22 * y
-                    ),
-
-                    MOD
-
-                );
-
-            html += `
+      html += `
 
                 <h3>
 
-                    Vetor ${
-                        (i / 2) + 1
-                    }
+                    Vetor ${i / 2 + 1}
 
                 </h3>
 
             `;
 
-            html += criarOperacaoHTML(
+      html += criarOperacaoHTML(
+        criarMatrizHTML(k11, k12, k21, k22),
 
-                criarMatrizHTML(
-                    k11,
-                    k12,
-                    k21,
-                    k22
-                ),
+        criarVetorHTML(x, y),
 
-                criarVetorHTML(
-                    x,
-                    y
-                ),
+        criarVetorHTML(r1, r2),
+      );
 
-                criarVetorHTML(
-                    r1,
-                    r2
-                )
-
-            );
-
-            html += `
+      html += `
 
                 <div class="formula">
 
@@ -816,31 +507,18 @@ function mostrarProcesso() {
 
             `;
 
-            // ============================
-            // SEGUNDA CAMADA
-            // ============================
+      // ============================
+      // SEGUNDA CAMADA
+      // ============================
 
-            if (
+      if (usarSistemaLinear) {
+        const linear = aplicarSistemaLinear(r1, r2);
 
-                usarSistemaLinear
+        matrizResultado.push(linear.x);
 
-            ) {
+        matrizResultado.push(linear.y);
 
-                const linear =
-                    aplicarSistemaLinear(
-                        r1,
-                        r2
-                    );
-
-                matrizResultado.push(
-                    linear.x
-                );
-
-                matrizResultado.push(
-                    linear.y
-                );
-
-                html += `
+        html += `
 
                     <div style="
                         background:#fff8d6;
@@ -883,24 +561,11 @@ function mostrarProcesso() {
                         </p>
 
                         ${criarOperacaoHTML(
+                          criarMatrizHTML(2, 1, 1, 3),
 
-                            criarMatrizHTML(
-                                2,
-                                1,
-                                1,
-                                3
-                            ),
+                          criarVetorHTML(r1, r2),
 
-                            criarVetorHTML(
-                                r1,
-                                r2
-                            ),
-
-                            criarVetorHTML(
-                                linear.x,
-                                linear.y
-                            )
-
+                          criarVetorHTML(linear.x, linear.y),
                         )}
 
                         <div class="codigo-final-box">
@@ -914,43 +579,24 @@ function mostrarProcesso() {
                     </div>
 
                 `;
+      } else {
+        matrizResultado.push(r1);
+        matrizResultado.push(r2);
+      }
+    }
+  }
 
-            }
+  // =====================================
+  // DESCRIPTOGRAFIA
+  // =====================================
+  else {
+    const inv = matrizInversaModular(k11, k12, k21, k22);
 
-            else {
-
-                matrizResultado.push(r1);
-                matrizResultado.push(r2);
-
-            }
-
-        }
-
+    if (!inv) {
+      return;
     }
 
-    // =====================================
-    // DESCRIPTOGRAFIA
-    // =====================================
-
-    else {
-
-        const inv =
-            matrizInversaModular(
-
-                k11,
-                k12,
-                k21,
-                k22
-
-            );
-
-        if (!inv) {
-
-            return;
-
-        }
-
-        html += `
+    html += `
 
             <div class="etapa-destaque">
 
@@ -964,51 +610,23 @@ function mostrarProcesso() {
 
             </div>
 
-            ${criarMatrizHTML(
-
-                inv.a,
-                inv.b,
-                inv.c,
-                inv.d
-
-            )}
+            ${criarMatrizHTML(inv.a, inv.b, inv.c, inv.d)}
 
         `;
 
-        for (
+    for (let i = 0; i < numerosMensagem.length; i += 2) {
+      let x = numerosMensagem[i];
 
-            let i = 0;
+      let y = numerosMensagem[i + 1];
 
-            i <
-            numerosMensagem.length;
+      // ==========================
+      // REMOVER SISTEMA LINEAR
+      // ==========================
 
-            i += 2
+      if (usarSistemaLinear) {
+        const original = desfazerSistemaLinear(x, y);
 
-        ) {
-
-            let x =
-                numerosMensagem[i];
-
-            let y =
-                numerosMensagem[i + 1];
-
-            // ==========================
-            // REMOVER SISTEMA LINEAR
-            // ==========================
-
-            if (
-
-                usarSistemaLinear
-
-            ) {
-
-                const original =
-                    desfazerSistemaLinear(
-                        x,
-                        y
-                    );
-
-                html += `
+        html += `
 
                     <div style="
                         background:#fff8d6;
@@ -1026,118 +644,60 @@ function mostrarProcesso() {
                         </h3>
 
                         ${criarOperacaoHTML(
+                          criarMatrizHTML(3, -1, -1, 2),
 
-                            criarMatrizHTML(
-                                3,
-                                -1,
-                                -1,
-                                2
-                            ),
+                          criarVetorHTML(x, y),
 
-                            criarVetorHTML(
-                                x,
-                                y
-                            ),
-
-                            criarVetorHTML(
-                                original.x,
-                                original.y
-                            )
-
+                          criarVetorHTML(original.x, original.y),
                         )}
 
                     </div>
 
                 `;
 
-                x = original.x;
-                y = original.y;
-            }
+        x = original.x;
+        y = original.y;
+      }
 
-            const r1 =
-                mod(
+      const r1 = mod(
+        inv.a * x + inv.b * y,
 
-                    (
-                        inv.a * x
-                    )
-                    +
-                    (
-                        inv.b * y
-                    ),
+        MOD,
+      );
 
-                    MOD
+      const r2 = mod(
+        inv.c * x + inv.d * y,
 
-                );
+        MOD,
+      );
 
-            const r2 =
-                mod(
+      matrizResultado.push(r1);
 
-                    (
-                        inv.c * x
-                    )
-                    +
-                    (
-                        inv.d * y
-                    ),
+      matrizResultado.push(r2);
 
-                    MOD
-
-                );
-
-            matrizResultado.push(
-                r1
-            );
-
-            matrizResultado.push(
-                r2
-            );
-
-            html += `
+      html += `
 
                 <h3>
 
-                    Vetor ${
-                        (i / 2) + 1
-                    }
+                    Vetor ${i / 2 + 1}
 
                 </h3>
 
             `;
 
-            html += criarOperacaoHTML(
+      html += criarOperacaoHTML(
+        criarMatrizHTML(inv.a, inv.b, inv.c, inv.d),
 
-                criarMatrizHTML(
+        criarVetorHTML(x, y),
 
-                    inv.a,
-                    inv.b,
-                    inv.c,
-                    inv.d
-
-                ),
-
-                criarVetorHTML(
-                    x,
-                    y
-                ),
-
-                criarVetorHTML(
-                    r1,
-                    r2
-                )
-
-            );
-
-        }
-
+        criarVetorHTML(r1, r2),
+      );
     }
+  }
 
-    document.getElementById(
-        "processo"
-    ).innerHTML = html;
+  document.getElementById("processo").innerHTML = html;
 
-    mostrarTela(
-        "tela5"
-    );
+  mostrarTela("tela5");
 }
 
 // ======================================
@@ -1145,38 +705,25 @@ function mostrarProcesso() {
 // CRIPTOGRAFIA AVANÇADA
 // ======================================
 
-function aplicarSistemaLinear(x, y){
+function aplicarSistemaLinear(x, y) {
+  const novoX = 2 * x + y;
 
-    const novoX =
+  const novoY = x + 3 * y;
 
-        (2 * x)
-        +
-        y;
+  return {
+    x: novoX,
 
-    const novoY =
-
-        x
-        +
-        (3 * y);
-
-    return {
-
-        x: novoX,
-
-        y: novoY
-
-    };
+    y: novoY,
+  };
 }
-
 
 // ======================================
 // SISTEMA LINEAR INVERSO
 // DESCRIPTOGRAFIA
 // ======================================
 
-function desfazerSistemaLinear(x, y){
-
-    /*
+function desfazerSistemaLinear(x, y) {
+  /*
         Sistema original:
 
         x' = 2x + y
@@ -1197,56 +744,25 @@ function desfazerSistemaLinear(x, y){
         [ -1 2 ]
     */
 
-    const det = 5;
+  const det = 5;
 
-    const originalX =
+  const originalX = (3 * x - y) / det;
 
-        (
-            (3 * x)
-            -
-            y
-        )
+  const originalY = (-1 * x + 2 * y) / det;
 
-        / det;
+  return {
+    x: Math.round(originalX),
 
-    const originalY =
-
-        (
-            (-1 * x)
-            +
-            (2 * y)
-        )
-
-        / det;
-
-    return {
-
-        x: Math.round(
-            originalX
-        ),
-
-        y: Math.round(
-            originalY
-        )
-
-    };
+    y: Math.round(originalY),
+  };
 }
-
 
 // ======================================
 // MATRIZ VISUAL
 // ======================================
 
-function criarMatrizHTML(
-
-    a,
-    b,
-    c,
-    d
-
-){
-
-    return `
+function criarMatrizHTML(a, b, c, d) {
+  return `
 
         <div class="matriz-card">
 
@@ -1271,19 +787,12 @@ function criarMatrizHTML(
     `;
 }
 
-
 // ======================================
 // VETOR VISUAL
 // ======================================
 
-function criarVetorHTML(
-
-    x,
-    y
-
-){
-
-    return `
+function criarVetorHTML(x, y) {
+  return `
 
         <div class="vetor-card">
 
@@ -1300,22 +809,18 @@ function criarVetorHTML(
     `;
 }
 
-
 // ======================================
 // OPERAÇÃO VISUAL
 // ======================================
 
 function criarOperacaoHTML(
+  matrizHTML,
 
-    matrizHTML,
+  vetorHTML,
 
-    vetorHTML,
-
-    resultadoHTML
-
-){
-
-    return `
+  resultadoHTML,
+) {
+  return `
 
         <div class="operacao-matriz">
 
@@ -1343,102 +848,47 @@ function criarOperacaoHTML(
 // ======================================
 
 function mostrarResultado() {
+  textoFinal = "";
 
-    textoFinal = "";
+  // ==========================
+  // CRIPTOGRAFAR
+  // ==========================
 
-    // ==========================
-    // CRIPTOGRAFAR
-    // ==========================
+  if (modoAtual === "criptografar") {
+    textoFinal = matrizResultado.join("-");
+  }
 
-    if (
-
-        modoAtual ===
-        "criptografar"
-
-    ) {
-
-        textoFinal =
-            matrizResultado.join(
-                "-"
-            );
-
+  // ==========================
+  // DESCRIPTOGRAFAR
+  // ==========================
+  else {
+    for (let numero of matrizResultado) {
+      if (caracteres[numero]) {
+        textoFinal += caracteres[numero];
+      }
     }
 
-    // ==========================
-    // DESCRIPTOGRAFAR
-    // ==========================
+    // REMOVER PADDING
+    textoFinal = textoFinal.slice(0, tamanhoRealMensagem);
+  }
 
-    else {
+  let titulo = "";
 
-        for (
+  // ==========================
+  // DEFINIR TÍTULO
+  // ==========================
 
-            let numero
-            of matrizResultado
+  if (modoAtual === "criptografar") {
+    titulo = usarSistemaLinear
+      ? "🔐🔐 Texto Criptografado (Matrizes + Sistemas Lineares)"
+      : "🔒 Texto Criptografado";
+  } else {
+    titulo = usarSistemaLinear
+      ? "🔐🔓 Texto Recuperado (Matrizes + Sistemas Lineares)"
+      : "🔓 Texto Original Recuperado";
+  }
 
-        ) {
-
-            if (
-
-                caracteres[
-                    numero
-                ]
-
-            ) {
-
-                textoFinal +=
-
-                    caracteres[
-                        numero
-                    ];
-
-            }
-
-        }
-
-    }
-
-    let titulo = "";
-
-    // ==========================
-    // DEFINIR TÍTULO
-    // ==========================
-
-    if (
-
-        modoAtual ===
-        "criptografar"
-
-    ) {
-
-        titulo = usarSistemaLinear
-
-            ?
-
-            "🔐🔐 Texto Criptografado (Matrizes + Sistemas Lineares)"
-
-            :
-
-            "🔒 Texto Criptografado";
-
-    }
-
-    else {
-
-        titulo = usarSistemaLinear
-
-            ?
-
-            "🔐🔓 Texto Recuperado (Matrizes + Sistemas Lineares)"
-
-            :
-
-            "🔓 Texto Original Recuperado";
-
-    }
-
-    document.getElementById(
-        "resultadoFinal"
-    ).innerHTML = `
+  document.getElementById("resultadoFinal").innerHTML = `
 
         <div class="resultado-final-card">
 
@@ -1457,12 +907,8 @@ function mostrarResultado() {
             <div class="resultado-info">
 
                 ${
-                    modoAtual ===
-                    "criptografar"
-
-                    ?
-
-                    `
+                  modoAtual === "criptografar"
+                    ? `
                     <p>
 
                         📋 Copie este código
@@ -1471,10 +917,7 @@ function mostrarResultado() {
 
                     </p>
                     `
-
-                    :
-
-                    `
+                    : `
                     <p>
 
                         ✅ A mensagem foi
@@ -1490,99 +933,91 @@ function mostrarResultado() {
 
     `;
 
-    mostrarTela(
-        "tela6"
-    );
+  mostrarTela("tela6");
 }
-
 
 // ======================================
 // REINICIAR SISTEMA
 // ======================================
 
 function reiniciar() {
+  // limpar textarea
 
-    // limpar textarea
+  const mensagem = document.getElementById("mensagem");
 
-    const mensagem =
-        document.getElementById(
-            "mensagem"
-        );
+  if (mensagem) {
+    mensagem.value = "";
+  }
 
-    if (mensagem) {
+  // reset variáveis
 
-        mensagem.value = "";
+  mensagemAtual = "";
 
-    }
+  numerosMensagem = [];
 
-    // reset variáveis
+  matrizResultado = [];
 
-    mensagemAtual = "";
+  textoFinal = "";
 
-    numerosMensagem = [];
+  usarSistemaLinear = false;
 
-    matrizResultado = [];
+  tamanhoRealMensagem = 0;
 
-    textoFinal = "";
+  modoAtual = "criptografar";
 
-    usarSistemaLinear = false;
+  // reset checkbox
 
-    modoAtual =
-        "criptografar";
+  const check = document.getElementById("modoAvancado");
 
-    // reset checkbox
+  if (check) {
+    check.checked = false;
+  }
 
-    const check =
-        document.getElementById(
-            "modoAvancado"
-        );
+  // reset radio
 
-    if (check) {
+  const radio = document.querySelector('input[value="criptografar"]');
 
-        check.checked = false;
+  if (radio) {
+    radio.checked = true;
+  }
 
-    }
+  // limpar telas
 
-    // reset radio
+  const resultado = document.getElementById("resultadoFinal");
 
-    const radio =
-        document.querySelector(
-            'input[value="criptografar"]'
-        );
+  if (resultado) {
+    resultado.innerHTML = "";
+  }
 
-    if (radio) {
+  const processo = document.getElementById("processo");
 
-        radio.checked = true;
+  if (processo) {
+    processo.innerHTML = "";
+  }
 
-    }
+  // reset contador
 
-    // limpar telas
+  const contador = document.getElementById("contadorTexto");
 
-    const resultado =
-        document.getElementById(
-            "resultadoFinal"
-        );
+  if (contador) {
+    contador.textContent = "0 caracteres";
+  }
 
-    if (resultado) {
+  // voltar para início
 
-        resultado.innerHTML = "";
+  mostrarTela("tela1");
+}
 
-    }
+// ======================================
+// CONTADOR DE CARACTERES
+// ======================================
 
-    const processo =
-        document.getElementById(
-            "processo"
-        );
+function atualizarContador() {
+  const mensagem = document.getElementById("mensagem");
 
-    if (processo) {
+  const contador = document.getElementById("contadorTexto");
 
-        processo.innerHTML = "";
+  const total = mensagem.value.length;
 
-    }
-
-    // voltar para início
-
-    mostrarTela(
-        "tela1"
-    );
+  contador.textContent = total === 1 ? "1 caractere" : `${total} caracteres`;
 }
