@@ -30,7 +30,8 @@ Este projeto foi concebido através de **Engenharia de Prompts (Prompt Engineeri
 ---
 
 ## 👥 Autores
-Projeto acadêmico desenvolvido em colaboração. 
+Projeto acadêmico construído em regime de colaboração:
 *   **Guilhermy Phyllipe Vieira da Cruz** — *Estudante de Ciência da Computação (FPB)*
-*   ** ** — *Estudante de Analise e Desenvolvimento de Sistemas (FPB)*
-*   ** ** — *Estudante de Analise e Desenvolvimento de Sistemas (FPB)*
+*   **Emanuel Henrique Vieira de Moura** — *Estudante de Analise e Desenvolvimento de Sistemas (FPB)*
+*   **Milena de Paula Moraes** — *Estudante de Analise e Desenvolvimento de Sistemas (FPB)*
+*   **Raiana de Souza Pires** — *Estudante de Analise e Desenvolvimento de Sistemas (FPB)*
